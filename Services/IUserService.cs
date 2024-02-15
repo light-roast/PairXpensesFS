@@ -2,12 +2,11 @@
 {
 	public interface IUserService
 	{
-		void CreateUser(User user);
-		void DeleteUser(int id);
-		List<User> GetAllUsers();
-		User GetUserById(int id);
+		Task<bool> CreateUser(User user);
+		Task<bool> DeleteUser(int id);
+		Task<List<User>> GetAllUsers();
 
-		User UpdateUserById(int id, User updateUser);
+		Task<User?> UpdateUserById(int id, User updateUser);
 		
 	}
 }

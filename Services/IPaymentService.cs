@@ -2,12 +2,12 @@
 {
 	public interface IPaymentService
 	{
-		void CreatePayment(Payment payment);
-		void DeletePayment(int id);
-		List<Payment> GetAllPaymentsByUserId(int userId);
-		Payment GetPaymentById(int id);
+		Task<bool> CreatePayment(Payment payment);
+		Task<bool> DeletePayment(int id);
+		Task<List<Payment>> GetAllPaymentsByUserId(int userId);
+		Task<Payment?> GetPaymentById(int id);
 
-		Payment UpdatePaymentById(int id, Payment updatePayment);
-		long GetTotalPaymentValueByUserId(int userId);
+		Task<Payment?> UpdatePaymentById(int id, Payment updatePayment);
+		Task<long> GetTotalPaymentValueByUserId(int userId);
 	}
 }

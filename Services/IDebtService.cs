@@ -2,12 +2,12 @@
 {
 	public interface IDebtService
 	{
-		void CreateDebt(Debt debt);
-		void DeleteDebt(int id);
-		List<Debt> GetAllDebtsByUserId(int userId);
-		Debt GetDebtById(int id);
+		Task<bool> CreateDebt(Debt debt);
+		Task<bool> DeleteDebt(int id);
+		Task<List<Debt>> GetAllDebtsByUserId(int userId);
+		Task<Debt?> GetDebtById(int id);
 
-		Debt UpdateDebtById(int id, Debt updateDebt);
-		long GetTotalDebtValueByUserId(int userId);
+		Task<Debt?> UpdateDebtById(int id, Debt updateDebt);
+		Task<long> GetTotalDebtValueByUserId(int userId);
 	}
 }
