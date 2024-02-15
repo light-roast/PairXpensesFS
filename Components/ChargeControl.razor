@@ -1,0 +1,52 @@
+<section>
+    <div class="inner-div">
+        <div>
+            <p>@UserA</p><output class="percentage-output">@percentageA%</output>
+        </div>
+        <input class="range" type="range" min="0" max="100" @bind-value="@percentageA" @oninput="PercentageAChanged" />
+        <div>
+            <p>@UserB</p><output class="percentage-output">@percentageB%</output>
+        </div>
+    </div>
+    <h5>Change user order</h5>
+    <label class="switch">
+        <input type="checkbox" id="toggleSwitch">
+        <span class="slider round"></span>
+    </label>
+</section>
+
+
+@code {
+    // Define the parameters
+    [Parameter]
+    public int percentageA { get; set; }
+
+    [Parameter]
+    public EventCallback<int> onPercentageAChanged { get; set; }
+
+    [Parameter]
+    public string? UserA {get; set;}
+
+    [Parameter]
+    public string? UserB {get; set;}
+
+    // Calculate percentageB based on percentageA
+    private int percentageB;
+    protected override void OnInitialized()
+    {
+        percentageB = 100 - percentageA;
+    }
+
+
+    // This method is called whenever percentageA changes
+    private async Task PercentageAChanged(ChangeEventArgs e)
+    {
+        // Parse the value of percentageA from the event args
+        if (int.TryParse(e.Value.ToString(), out int newValue))
+        {
+            percentageA = newValue;
+            percentageB = 100 - percentageA;
+            await onPercentageAChanged.InvokeAsync(newValue);
+        }
+    }
+}

@@ -1,0 +1,18 @@
+nav[b-2ewkxwj2la] {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+}
+
+.expenses-container[b-2ewkxwj2la] {
+    display: flex;
+}
+
+.expenses-column[b-2ewkxwj2la] {
+    flex: 1;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

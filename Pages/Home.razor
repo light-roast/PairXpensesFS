@@ -1,0 +1,32 @@
+﻿@page "/"
+
+<PageTitle>PairXpenses</PageTitle>
+<nav>
+    <h1>PairXpenses</h1>
+    <ChargeControl UserA="@UserA" UserB="@UserB" PercentageA="@percentageA" onPercentageAChanged="PercentageAChanged" />
+</nav>
+<hr>
+
+
+
+@code {
+    
+    private int percentageA;
+
+    protected override void OnInitialized()
+    {
+        percentageA = 50;
+    }
+
+  
+    private string UserA {get; set;} = "User A";
+
+   
+    private string UserB {get; set;} = "User B";
+
+    
+    private void PercentageAChanged(int newValue)
+    {
+        percentageA = newValue;
+    }
+}
