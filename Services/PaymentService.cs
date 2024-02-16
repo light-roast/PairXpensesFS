@@ -29,67 +29,57 @@ namespace PairXpensesFS.Services
 			}
 		};
 
-		public Task<bool> CreatePayment(Payment payment)
+		public void CreatePayment(Payment payment)
 		{
 			try
 			{
 				Payments.Add(payment);
-				return Task.FromResult(true);
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine($"Error al crear el pago: {ex.Message}");
-				return Task.FromResult(true);
+				Console.WriteLine($"Error al crear el pago: {ex.Message}");	
 			}
 		}
 
-		public Task<bool> DeletePayment(int id)
+		public void DeletePayment(Payment payment)
 		{
 			try
 			{
-				var paymentToDelete = Payments.FirstOrDefault(p => p.Id == id);
-				if (paymentToDelete != null)
-				{
-					Payments.Remove(paymentToDelete);
-					return Task.FromResult(true);
-				}
-				return Task.FromResult(false);
+				Payments.Remove(payment);
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine($"Error al eliminar el pago: {ex.Message}");
-				return Task.FromResult(false);
+			
 			}
 		}
 
-		public Task<List<Payment>> GetAllPaymentsByUserId(int userId)
+		public List<Payment> GetAllPaymentsByUserId(int userId)
 		{
 			List<Payment> paymentsByUser = Payments.Where(p => p.User.Id == userId).ToList();
-			return Task.FromResult(paymentsByUser);
+			return paymentsByUser;
 		}
 
-		public Task<Payment?> GetPaymentById(int id)
+		public Payment? GetPaymentById(int id)
 		{
 			var payment = Payments.FirstOrDefault(p => p.Id == id);
-			return Task.FromResult<Payment?>(payment);
+			return payment;
 		}
 
-		public Task<long> GetTotalPaymentValueByUserId(int userId)
+		public long GetTotalPaymentValueByUserId(int userId)
 		{
 			long totalPaymentValue = Payments.Where(p => p.User.Id == userId).Sum(p => p.Value);
-			return Task.FromResult(totalPaymentValue);
+			return totalPaymentValue;
 		}
 
-		public Task<Payment?> UpdatePaymentById(int id, Payment updatePayment)
+		public Payment? UpdatePaymentById(Payment paymentToUpdate, Payment updatePayment)
 		{
-			var paymentToUpdate = Payments.FirstOrDefault(p => p.Id == id);
-			if (paymentToUpdate != null)
-			{
+			
+
 				paymentToUpdate.Name = updatePayment.Name;
 				paymentToUpdate.Value = updatePayment.Value;
 				paymentToUpdate.UpdateDate = DateTime.Now;
-			}
-			return Task.FromResult<Payment?>(paymentToUpdate);
+				return paymentToUpdate;
 		}
 	}
 }

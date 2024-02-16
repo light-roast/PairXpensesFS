@@ -29,71 +29,54 @@ namespace PairXpensesFS.Services
 			}
 		};
 
-		public Task<bool> CreateDebt(Debt debt)
+		public void CreateDebt(Debt debt)
 		{
 			try
 			{
 				Debts.Add(debt);
 
-				return Task.FromResult(true);
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine($"Error al crear la deuda: {ex.Message}");
-				return Task.FromResult(false);
+
 			}
 			
 		}
 
-		public Task<bool> DeleteDebt(int id)
-		{
-			
-			var debtToDelete = Debts.FirstOrDefault(d => d.Id == id);
-			if (debtToDelete != null)
-			{
-				
-				Debts.Remove(debtToDelete);
-				
-				return Task.FromResult(true);
-			}
-			else
-			{
-				
-				return Task.FromResult(false);
-			}
+		public void DeleteDebt(Debt debt)
+		{	
+			Debts.Remove(debt);
 		}
 
 
-		public Task<List<Debt>> GetAllDebtsByUserId(int userId)
+		public List<Debt> GetAllDebtsByUserId(int userId)
 		{
 			List<Debt> debtsByUser = Debts.Where(d => d.User.Id == userId).ToList();
-			return Task.FromResult(debtsByUser);
+			return debtsByUser;
 		}
 
-		public Task<Debt?> GetDebtById(int id)
+		public Debt? GetDebtById(int id)
 		{
 			var debt = Debts.FirstOrDefault(d => d.Id == id);
-			return Task.FromResult(debt);
+			return debt;
 		}
 
-		public Task<long> GetTotalDebtValueByUserId(int userId)
-		{
-			// Calcular el total de la deuda del usuario con el ID dado
-			long totalDebtValue = Debts.Where(d => d.User.Id == userId).Sum(d => d.Value);
-			return Task.FromResult(totalDebtValue);
-		}
-
-		public Task<Debt?> UpdateDebtById(int id, Debt updateDebt)
+		public long GetTotalDebtValueByUserId(int userId)
 		{
 			
-			var debtToUpdate = Debts.FirstOrDefault(d => d.Id == id);
-			if (debtToUpdate != null)
-			{
+			long totalDebtValue = Debts.Where(d => d.User.Id == userId).Sum(d => d.Value);
+			return totalDebtValue;
+		}
+
+		public Debt? UpdateDebtById(Debt debtToUpdate, Debt updateDebt)
+		{
+			
 				debtToUpdate.Name = updateDebt.Name;
 				debtToUpdate.Value = updateDebt.Value;
 				debtToUpdate.UpdateDate = DateTime.Now;
-			}
-			return Task.FromResult(debtToUpdate);
+			
+				return debtToUpdate;
 		}
 	}
 }

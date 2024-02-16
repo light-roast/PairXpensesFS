@@ -23,70 +23,45 @@ namespace PairXpensesFS.Services
 			}
 		};
 
-		public Task<bool> CreateUser(User user)
+		public void CreateUser(User user)
 		{
 			try
 			{
 				Users.Add(user);
 
-				return Task.FromResult(true);
+				
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine($"Error al crear el usuario: {ex.Message}");
-				return Task.FromResult(false);
+
 			}
 		}
 
-		public Task<bool> DeleteUser(int id)
+		public void DeleteUser(User user)
 		{
 			try
 			{
-				
-				var userToRemove = Users.FirstOrDefault(u => u.Id == id);
+				Users.Remove(user);
 
-				
-				if (userToRemove != null)
-				{
-					
-					Users.Remove(userToRemove);
-
-				
-					return Task.FromResult(true);
-				}
-				else
-				{
-				
-					return Task.FromResult(false);
-				}
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine($"Error al eliminar el usuario: {ex.Message}");
-				return Task.FromResult(false);
 			}
 		}
 
-		public Task<List<User>> GetAllUsers()
+		public List<User> GetAllUsers()
 		{
-			return Task.FromResult(Users);
+			return Users;
 		}
 
 
-		public Task<User?> UpdateUserById(int id, User updateUser)
+		public User? UpdateUserById(User userToUpdate, User updateUser)
 		{
-			var existingUser = Users.FirstOrDefault(u => u.Id == id);
-			if (existingUser != null)
-			{
-				existingUser.Name = updateUser.Name;
+				userToUpdate.Name = updateUser.Name;
 	
-				return Task.FromResult<User?>(existingUser);
-			}
-			else
-			{
-				
-				return Task.FromResult<User?>(null);
-			}
+				return userToUpdate;
 		}
 	}
 }
