@@ -1,0 +1,95 @@
+﻿@page "/user"
+@using PairExpensesFS.Entities
+@inject Services.UserService UserService
+
+@if (isEdit)
+{
+    @UserEdit()
+}
+else
+{
+    <h3>@User.Name</h3>
+    <Icon Name="IconName.PencilSquare" @onclick="HandleEditClick" />
+}
+
+@code {
+    // Declare a state variable to track if the form for updating the user is open
+    private bool isEdit = false;
+
+    // Declare a parameter to receive the user name from the parent component
+    [Parameter]
+    public UserReq User { get; set; }
+
+    [Parameter]
+    public EventCallback<UserReq> CambiarUser { get; set; }
+
+    private UserReq ToUpdate { get; set; }
+
+    private int UserId { get; set; }
+
+    // Declare a variable to hold the new user name in the edit form
+    private string NewUser { get; set; }
+
+    
+
+    protected override void OnParametersSet()
+    {
+        Console.WriteLine($"OnParametersSet called: {User.Name}");
+        this.UserId = User.Id;
+        Console.WriteLine(UserId);
+        base.OnParametersSet();
+    }
+
+
+    // Inject an HttpClient instance to make API calls
+    [Inject]
+    private HttpClient HttpClient { get; set; }
+
+    // Event handler for when the user clicks the edit icon
+    private void HandleEditClick()
+    {
+        // Set the isEdit flag to true to show the edit form
+        isEdit = true;
+    }
+
+    // Inner component for editing the user
+    private RenderFragment UserEdit() => @<div>
+        <input type="text" @bind="NewUser" />
+        <button @onclick="HandleUpdateClick">Update</button>
+    </div>
+    ;
+
+    // Event handler for when the user clicks the update button
+    private async Task HandleUpdateClick()
+{
+    // Call the UserService to update the user in the backend
+    var updatedUser = await UserService.UpdateUser(UserId, NewUser);
+    if (updatedUser != null)
+    {
+        // Instantiate ToUpdate if it's null
+        if (ToUpdate == null)
+        {
+            ToUpdate = new UserReq();
+        }
+
+        // Manually update the ToUpdate object with the response
+        ToUpdate.Id = updatedUser.Id;
+        ToUpdate.Name = updatedUser.Name;
+    }
+    else
+    {
+        Console.WriteLine("Updated user is null.");
+        return;
+    }
+
+    // Invoke the CambiarUser callback with the updated user object
+    await CambiarUser.InvokeAsync(ToUpdate);
+
+    // Reset the isEdit flag to hide the edit form
+    isEdit = false;
+
+    // Request a UI update
+    StateHasChanged();
+}
+
+}

@@ -1,11 +1,12 @@
+@using PairExpensesFS.Entities
 <section>
     <div class="inner-div">
         <div>
-            <p>@UserA</p><output class="percentage-output">@percentageA%</output>
+            <p>@UserA.Name</p><output class="percentage-output">@percentageA%</output>
         </div>
         <input class="range" type="range" min="0" max="100" @bind-value="@percentageA" @oninput="PercentageAChanged" />
         <div>
-            <p>@UserB</p><output class="percentage-output">@percentageB%</output>
+            <p>@UserB.Name</p><output class="percentage-output">@percentageB%</output>
         </div>
     </div>
     <h5>Change user order</h5>
@@ -25,10 +26,10 @@
     public EventCallback<int> onPercentageAChanged { get; set; }
 
     [Parameter]
-    public string? UserA {get; set;}
+    public UserReq UserA {get; set;}
 
     [Parameter]
-    public string? UserB {get; set;}
+    public UserReq UserB {get; set;}
 
     // Calculate percentageB based on percentageA
     private int percentageB;
@@ -42,7 +43,7 @@
     private async Task PercentageAChanged(ChangeEventArgs e)
     {
         // Parse the value of percentageA from the event args
-        if (int.TryParse(e.Value.ToString(), out int newValue))
+        if (int.TryParse(e?.Value.ToString(), out int newValue))
         {
             percentageA = newValue;
             percentageB = 100 - percentageA;

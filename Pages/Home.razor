@@ -1,4 +1,7 @@
 ﻿@page "/"
+@using Services
+@using PairExpensesFS.Entities
+@inject Services.UserService UserService
 
 <PageTitle>PairXpenses</PageTitle>
 <nav>
@@ -6,23 +9,54 @@
     <ChargeControl UserA="@UserA" UserB="@UserB" PercentageA="@percentageA" onPercentageAChanged="PercentageAChanged" />
 </nav>
 <hr>
+<main>
+    <ColumnaUsuario User="@UserA" CambiarUser="@CambiarUser" />
+    <ColumnaUsuario User="@UserB" CambiarUser="@CambiarUser" />
+</main>
 
 
 
 @code {
-    
+    private List<UserReq> users;
+
     private int percentageA;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
         percentageA = 50;
+
+        users = await UserService.GetUsersAsync();
+
+        UserA = users[0];
+        UserB = users[1];
+
+    }
+    private void CambiarUser(UserReq user)
+    {
+        if (user.Id == 1)
+        {
+            UserA.Name = user.Name;
+            Console.WriteLine($"UserA updated to: {UserA.Name}");
+          
+        }
+        else if (user.Id == 2)
+        {
+            UserB.Name = user.Name;
+            Console.WriteLine($"UserB updated to: {UserB.Name}");
+        
+        }
+        else
+        {
+            Console.WriteLine("User ID does not match UserA or UserB.");
+        }
+        StateHasChanged();
     }
 
-  
-    private string UserA {get; set;} = "User A";
+
+    private UserReq UserA { get; set; } = new UserReq { Id = 1, Name = "User A" };
 
    
-    private string UserB {get; set;} = "User B";
+    private UserReq UserB { get; set; } = new UserReq { Id = 2, Name = "User B" };
 
     
     private void PercentageAChanged(int newValue)

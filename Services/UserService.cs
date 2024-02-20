@@ -1,67 +1,76 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using PairExpensesFS.Entities;
+using System.Net.Http.Json;
+using System.Text;
+using System.Text.Json;
+
+
 
 namespace PairXpensesFS.Services
 {
-	public class UserService : IUserService
-	{
-		public List<User> Users = new List<User>
-		{
-			new User {
-				Id = 1,
-				Name = "Daniel",
-				Debts = new List<Debt> {},
-				Payments =  new List<Payment> {}
-			},
-			new User {
-				Id = 2,
-				Name = "Maritza",
-				Debts = new List<Debt> {},
-				Payments =  new List<Payment> {}
-			}
-		};
+    public class UserService
+    {
 
-		public void CreateUser(User user)
-		{
-			try
-			{
-				Users.Add(user);
+        private readonly HttpClient _httpClient;
 
-				
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine($"Error al crear el usuario: {ex.Message}");
+        public UserService(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
 
-			}
-		}
+        public async Task<List<UserReq>> GetUsersAsync()
+        {
+            var response = await _httpClient.GetAsync("api/User");
 
-		public void DeleteUser(User user)
-		{
-			try
-			{
-				Users.Remove(user);
+            if (response.IsSuccessStatusCode)
+            {
+                var users = await response.Content.ReadFromJsonAsync<List<UserReq>>();
+                return users;
+            }
+            else
+            {
+                
+                return new List<UserReq>() {
+            
+                new UserReq { Id = 1, Name = "Default User 1" },
+                new UserReq { Id = 2, Name = "Default User 2" },
+           
+                }; 
+            }
+        }
 
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine($"Error al eliminar el usuario: {ex.Message}");
-			}
-		}
+        public async Task<UserReq> UpdateUser(int UserId, string NewName)
+        {
+            var updateModel = new UserReq { Id = UserId, Name = NewName };
 
-		public List<User> GetAllUsers()
-		{
-			return Users;
-		}
+            var response = await _httpClient.PatchAsync($"api/user/{UserId}", new StringContent(JsonSerializer.Serialize(updateModel), Encoding.UTF8, "application/json"));
 
+            if (response.IsSuccessStatusCode)
+            {
+                var responseBody = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("Response JSON: " + responseBody); // Log the raw JSON response
 
-		public User? UpdateUserById(User userToUpdate, User updateUser)
-		{
-				userToUpdate.Name = updateUser.Name;
-	
-				return userToUpdate;
-		}
-	}
+                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true }; // Handle case sensitivity
+                var updatedUser = JsonSerializer.Deserialize<UserReq>(responseBody, options);
+
+                if (updatedUser != null)
+                {
+                    Console.WriteLine("Deserialized user: " + updatedUser.Name);
+                    Console.WriteLine("Deserialized id: " + updatedUser.Id);
+                }
+                else
+                {
+                    Console.WriteLine("Deserialization of user failed.");
+                }
+
+                return updatedUser;
+            }
+            else
+            {
+                Console.WriteLine("Failed to update user. Status code: " + response.StatusCode);
+                return null; // Return null if the response is not successful
+            }
+        }
+    }
 }
+
+
