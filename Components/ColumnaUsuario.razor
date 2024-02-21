@@ -1,51 +1,113 @@
 ﻿@page "/user"
 @using PairExpensesFS.Entities
 @inject Services.UserService UserService
+@inject Services.PaymentService PaymentService
+@inject Services.DebtService DebtService
 <section class="column">
-@if (isEdit)
-{
-    @UserEdit()
-}
-else
-{
-    <div class="normal">
-        <h3>@User.Name</h3>
-        <Icon id="icon" Name="IconName.PencilSquare" @onclick="HandleEditClick" />
-     </div>
-}
+    <div>
+        @if (isEdit)
+        {
+            <div class="normal">
+                @UserEdit()
+            </div>
+        }
+        else
+        {
+            <div class="normal">
+                @if (User != null)
+                {
+                    <h3>@User.Name</h3>
+                }
+
+                <Icon id="icon" Name="IconName.PencilSquare" @onclick="HandleEditClick" />
+            </div>
+        }
+    </div>
+    <div class="PyD">
+        <div class="title">
+            <h4>Payment</h4>
+            <h4>Value</h4>
+            <h4>Date</h4>
+        </div>
+        @if(payments != null)
+        {
+            @foreach (var payment in payments)
+            {
+                <Payment payment="@payment"/>
+            }
+        }
+        
+    </div>
+    <div class="PyD">
+        <div class="title">
+            <h4>Debt</h4>
+            <h4>Value</h4>
+            <h4>Date</h4>
+        </div>
+        
+        @if(debts != null)
+        {
+            @foreach (var debt in debts)
+            {
+                <Debt debt="@debt" />
+            }
+        }
+        
+    </div>
 </section>
+
 @code {
     // Declare a state variable to track if the form for updating the user is open
     private bool isEdit = false;
 
     // Declare a parameter to receive the user name from the parent component
     [Parameter]
-    public UserReq User { get; set; }
+    public UserReq? User { get; set; }
 
     [Parameter]
     public EventCallback<UserReq> CambiarUser { get; set; }
 
-    private UserReq ToUpdate { get; set; }
+    private UserReq? ToUpdate { get; set; }
 
-    private int UserId { get; set; }
+    private int? UserId { get; set; }
 
-    
-    private string NewUser { get; set; }
 
-    
+    private string? NewUser { get; set; }
+
+    private List<PaymentReq>? payments;
+    private List<DebtReq>? debts;
+
+
+
 
     protected override void OnParametersSet()
     {
-        Console.WriteLine($"OnParametersSet called: {User.Name}");
-        this.UserId = User.Id;
-        Console.WriteLine(UserId);
-        base.OnParametersSet();
+        if(User != null)
+        {
+            this.UserId = User.Id;
+            base.OnParametersSet();
+        }
+        
     }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (User != null)
+        {
+            payments = await PaymentService.GetPaymentByUserAsync(User.Id);
+        }
+
+        if (User != null)
+        {
+            debts = await DebtService.GetDebtByUserAsync(User.Id);
+        }
+    }
+
 
 
     // Inject an HttpClient instance to make API calls
     [Inject]
-    private HttpClient HttpClient { get; set; }
+    private HttpClient? HttpClient { get; set; }
 
     // Event handler for when the user clicks the edit icon
     private void HandleEditClick()
@@ -63,35 +125,43 @@ else
 
     // Event handler for when the user clicks the update button
     private async Task HandleUpdateClick()
-{
-    // Call the UserService to update the user in the backend
-    var updatedUser = await UserService.UpdateUser(UserId, NewUser);
-    if (updatedUser != null)
     {
-        // Instantiate ToUpdate if it's null
-        if (ToUpdate == null)
+        // Ensure UserId is not null before calling the method
+        if (UserId.HasValue && !string.IsNullOrEmpty(NewUser))
         {
-            ToUpdate = new UserReq();
+            // Call the UserService to update the user in the backend
+            var updatedUser = await UserService.UpdateUser(UserId.Value, NewUser);
+            if (updatedUser != null)
+            {
+                // Instantiate ToUpdate if it's null
+                if (ToUpdate == null)
+                {
+                    ToUpdate = new UserReq();
+                }
+
+                // Manually update the ToUpdate object with the response
+                ToUpdate.Id = updatedUser.Id;
+                ToUpdate.Name = updatedUser.Name;
+
+                // Invoke the CambiarUser callback with the updated user object
+                await CambiarUser.InvokeAsync(ToUpdate);
+
+                // Reset the isEdit flag to hide the edit form
+                isEdit = false;
+
+                // Request a UI update
+                StateHasChanged();
+            }
+            else
+            {
+                Console.WriteLine("Updated user is null.");
+            }
         }
-
-        // Manually update the ToUpdate object with the response
-        ToUpdate.Id = updatedUser.Id;
-        ToUpdate.Name = updatedUser.Name;
+        else
+        {
+            // Handle the case where UserId is null (optional)
+            Console.WriteLine("UserId is null.");
+        }
     }
-    else
-    {
-        Console.WriteLine("Updated user is null.");
-        return;
-    }
-
-    // Invoke the CambiarUser callback with the updated user object
-    await CambiarUser.InvokeAsync(ToUpdate);
-
-    // Reset the isEdit flag to hide the edit form
-    isEdit = false;
-
-    // Request a UI update
-    StateHasChanged();
-}
 
 }

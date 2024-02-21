@@ -16,16 +16,17 @@ namespace PairXpensesFS.Services
         {
             var response = await _httpClient.GetAsync("api/Payment/user/" + id);
 
-            if (response.IsSuccessStatusCode)
+            if (response != null && response.IsSuccessStatusCode)
             {
                 var payments = await response.Content.ReadFromJsonAsync<List<PaymentReq>>();
-                return payments;
+                if (payments != null)
+                {
+                    return payments;
+                }
             }
-            else
-            {
 
-                return new List<PaymentReq>() { };
-            }
+            
+            return new List<PaymentReq>();
         }
     }
 }

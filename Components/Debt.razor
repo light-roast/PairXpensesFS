@@ -1,0 +1,39 @@
+﻿@using PairExpensesFS.Entities
+@using System.Globalization
+
+<style>
+	article {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		justify-content: center;
+		border-bottom: 1px solid #ccc;
+	}
+
+		
+		article > * {
+			justify-self: center;
+		}
+</style>
+<article>
+	@if(debt != null){
+		<h5><Icon id="icon" Name="IconName.PencilSquare" /> @debt.Name:</h5>
+		<p>@currency</p>
+		<p>@debt.CreateDate.ToString("dd/MM/yy")</p>
+	}	
+</article>
+
+@code {
+	[Parameter]
+	public DebtReq? debt { get; set; }
+
+	private string? currency { get; set; }
+
+	protected override void OnInitialized()
+	{
+		if(debt != null)
+		{
+			currency = debt.Value.ToString("C0", CultureInfo.GetCultureInfo("es-CO"));
+		}
+		
+	}
+}

@@ -1,24 +1,50 @@
 ﻿
 
 .column {
-    width: 100%
-    min-width: 320px;
     flex: 1;
     padding: 10px;
     margin: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     
 }
 
 .normal {
     display: flex;
     align-items: center;
+    justify-content:center;
+    margin: 0 auto;
+    border-bottom: 1px solid #ccc;
+}
+
+input {
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 h3{
     margin-right: 4px;
 }
+
+.PyD {
+    margin-bottom: 20px;
+}
+
+.title {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+}
+
+    
+    .title > * {
+        justify-self: center;
+    }
+
+    .title h4 {
+        border-right: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+        padding-right: 5px;
+        padding-left: 5px;
+    }

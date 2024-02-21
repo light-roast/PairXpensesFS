@@ -8,17 +8,19 @@ nav {
 main {
     display: flex;
     justify-content: space-around;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
 
 .order-1 {
     order: 1;
     display: flex;
-    width: 40%;
+    width: 45%;
+    min-width: 345px;
 }
 
 .order-2 {
     order: 2;
     display: flex;
-    width: 40%;
+    width: 45%;
+    min-width: 345px;
 }

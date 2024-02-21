@@ -24,15 +24,27 @@ namespace PairXpensesFS.Services
             if (response.IsSuccessStatusCode)
             {
                 var users = await response.Content.ReadFromJsonAsync<List<UserReq>>();
-                return users;
+                if(users != null)
+                {
+                    return users;
+                }
+                else
+                {
+                    return new List<UserReq>() {
+
+                    new UserReq { Id = 1, Name = "UserA" },
+                    new UserReq { Id = 2, Name = "UserB" },
+
+                    };
+                }
             }
             else
             {
                 
                 return new List<UserReq>() {
             
-                new UserReq { Id = 1, Name = "Default User 1" },
-                new UserReq { Id = 2, Name = "Default User 2" },
+                new UserReq { Id = 1, Name = "UserA" },
+                new UserReq { Id = 2, Name = "UserB" },
            
                 }; 
             }
@@ -56,20 +68,21 @@ namespace PairXpensesFS.Services
                 {
                     Console.WriteLine("Deserialized user: " + updatedUser.Name);
                     Console.WriteLine("Deserialized id: " + updatedUser.Id);
+                    return updatedUser;
                 }
                 else
                 {
                     Console.WriteLine("Deserialization of user failed.");
                 }
-
-                return updatedUser;
             }
             else
             {
                 Console.WriteLine("Failed to update user. Status code: " + response.StatusCode);
-                return null; // Return null if the response is not successful
             }
+
+            return new UserReq() { Id = UserId, Name = "FailedUpdate" };
         }
+
     }
 }
 

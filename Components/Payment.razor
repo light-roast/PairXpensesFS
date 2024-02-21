@@ -1,0 +1,27 @@
+﻿@using PairExpensesFS.Entities
+@using System.Globalization
+<article>
+	@if(payment != null){
+
+		<h5><Icon id="icon" Name="IconName.PencilSquare" /> @payment.Name:</h5>
+		<p>@currency</p>
+		<p>@payment.CreateDate.ToString("dd/MM/yy")</p>
+	}	
+</article>
+
+@code {
+	[Parameter]
+	public PaymentReq? payment { get; set; }
+
+	private string? currency { get; set; }
+
+	protected override void OnInitialized()
+	{
+		if (payment != null)
+		{
+			currency = payment.Value.ToString("C0", CultureInfo.GetCultureInfo("es-CO"));
+		}
+
+	}
+	
+}

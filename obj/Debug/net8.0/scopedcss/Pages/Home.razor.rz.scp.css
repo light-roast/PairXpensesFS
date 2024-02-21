@@ -8,17 +8,19 @@ nav[b-2ewkxwj2la] {
 main[b-2ewkxwj2la] {
     display: flex;
     justify-content: space-around;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
 
 .order-1[b-2ewkxwj2la] {
     order: 1;
     display: flex;
-    width: 40%;
+    width: 45%;
+    min-width: 345px;
 }
 
 .order-2[b-2ewkxwj2la] {
     order: 2;
     display: flex;
-    width: 40%;
+    width: 45%;
+    min-width: 345px;
 }

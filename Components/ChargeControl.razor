@@ -2,11 +2,23 @@
 <section>
     <div class="inner-div">
         <div>
-            <p>@UserA.Name</p><output class="percentage-output">@percentageA%</output>
+            @if (UserA != null)
+            {
+                <p>@UserA.Name</p>
+
+                <output class="percentage-output">@percentageA%</output>
+            }
+            
         </div>
         <input class="range" type="range" min="0" max="100" @bind-value="@percentageA" @oninput="PercentageAChanged" />
         <div>
-            <p>@UserB.Name</p><output class="percentage-output">@percentageB%</output>
+            @if (UserB != null)
+            {
+                <p>@UserB.Name</p>
+
+                <output class="percentage-output">@percentageB%</output>
+            }
+            
         </div>
     </div>
     <h5>Change user position</h5>
@@ -37,10 +49,10 @@
     public EventCallback<int> onPercentageAChanged { get; set; }
 
     [Parameter]
-    public UserReq UserA {get; set;}
+    public UserReq? UserA {get; set;}
 
     [Parameter]
-    public UserReq UserB {get; set;}
+    public UserReq? UserB {get; set;}
 
     // Calculate percentageB based on percentageA
     private int percentageB;
@@ -53,12 +65,16 @@
     // This method is called whenever percentageA changes
     private async Task PercentageAChanged(ChangeEventArgs e)
     {
-        // Parse the value of percentageA from the event args
-        if (int.TryParse(e?.Value.ToString(), out int newValue))
+        
+        if (e?.Value != null)
         {
-            percentageA = newValue;
-            percentageB = 100 - percentageA;
-            await onPercentageAChanged.InvokeAsync(newValue);
+            // Parse the value of percentageA from the event args
+            if (int.TryParse(e.Value.ToString(), out int newValue))
+            {
+                percentageA = newValue;
+                percentageB = 100 - percentageA;
+                await onPercentageAChanged.InvokeAsync(newValue);
+            }
         }
     }
 }

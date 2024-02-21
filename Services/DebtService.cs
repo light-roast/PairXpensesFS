@@ -19,7 +19,15 @@ namespace PairXpensesFS.Services
             if (response.IsSuccessStatusCode)
             {
                 var users = await response.Content.ReadFromJsonAsync<List<DebtReq>>();
-                return users;
+                if(users != null)
+                {
+                    return users;
+                }
+                else
+                {
+                    return new List<DebtReq>() { };
+                }
+
             }
             else
             {
