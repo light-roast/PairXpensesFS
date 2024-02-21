@@ -5,14 +5,16 @@ nav {
     align-items: center;
 }
 
-.expenses-container {
+main {
     display: flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
 }
 
-.expenses-column {
-    flex: 1;
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.order-1 {
+    order: 1; 
+}
+
+.order-2 {
+    order: 2; 
 }

@@ -6,18 +6,38 @@
 <PageTitle>PairXpenses</PageTitle>
 <nav>
     <h1>PairXpenses</h1>
-    <ChargeControl UserA="@UserA" UserB="@UserB" PercentageA="@percentageA" onPercentageAChanged="PercentageAChanged" />
+    <ChargeControl UserA="@UserA" UserB="@UserB" 
+        PercentageA="@percentageA" 
+        onPercentageAChanged="PercentageAChanged" 
+        IsOrderReversed="@IsOrderReversed" 
+        IsOrderReversedChanged="HandleToggle" 
+     />
 </nav>
 <hr>
 <main>
-    <ColumnaUsuario User="@UserA" CambiarUser="@CambiarUser" />
-    <ColumnaUsuario User="@UserB" CambiarUser="@CambiarUser" />
+    <div class="@(IsOrderReversed ? "order-2" : "order-1")">
+        <ColumnaUsuario User="@UserA"
+            CambiarUser="@CambiarUser"            
+        />
+    </div>
+    <div class="@(IsOrderReversed ? "order-1" : "order-2")">
+        <ColumnaUsuario User="@UserB"                        
+            CambiarUser="@CambiarUser"
+          />
+    </div>
+    
 </main>
 
 
 
 @code {
     private List<UserReq> users;
+
+    private bool IsOrderReversed { get; set; } = false;
+    private void HandleToggle(bool newValue)
+    {
+        IsOrderReversed = newValue;
+    }
 
     private int percentageA;
 

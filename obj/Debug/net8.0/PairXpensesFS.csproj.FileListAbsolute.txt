@@ -1175,3 +1175,4 @@ D:\Projects\PairXpensesFS\bin\Debug\net8.0\wwwroot\_framework\BlazorBootstrap.wa
 D:\Projects\PairXpensesFS\bin\Debug\net8.0\BlazorBootstrap.dll
 D:\Projects\PairXpensesFS\obj\Debug\net8.0\webcil\BlazorBootstrap.wasm
 D:\Projects\PairXpensesFS\obj\Debug\net8.0\compressed\bnap2x8qsj.gz
+D:\Projects\PairXpensesFS\obj\Debug\net8.0\scopedcss\Components\ColumnaUsuario.razor.rz.scp.css

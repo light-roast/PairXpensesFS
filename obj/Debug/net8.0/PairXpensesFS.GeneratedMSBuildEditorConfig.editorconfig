@@ -26,10 +26,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/PairXpensesFS/Components/ColumnaUsuario.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb2x1bW5hVXN1YXJpby5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/Projects/PairXpensesFS/Layout/LoginDisplay.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XExvZ2luRGlzcGxheS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -53,6 +49,10 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/Projects/PairXpensesFS/Components/ChargeControl.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDaGFyZ2VDb250cm9sLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-kpxijb7gfo
+
+[D:/Projects/PairXpensesFS/Components/ColumnaUsuario.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb2x1bW5hVXN1YXJpby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-thzb36r6r1
 
 [D:/Projects/PairXpensesFS/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==

@@ -1,17 +1,19 @@
 ﻿@page "/user"
 @using PairExpensesFS.Entities
 @inject Services.UserService UserService
-
+<section class="column">
 @if (isEdit)
 {
     @UserEdit()
 }
 else
 {
-    <h3>@User.Name</h3>
-    <Icon Name="IconName.PencilSquare" @onclick="HandleEditClick" />
+    <div class="normal">
+        <h3>@User.Name</h3>
+        <Icon id="icon" Name="IconName.PencilSquare" @onclick="HandleEditClick" />
+     </div>
 }
-
+</section>
 @code {
     // Declare a state variable to track if the form for updating the user is open
     private bool isEdit = false;
@@ -27,7 +29,7 @@ else
 
     private int UserId { get; set; }
 
-    // Declare a variable to hold the new user name in the edit form
+    
     private string NewUser { get; set; }
 
     

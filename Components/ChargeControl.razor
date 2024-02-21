@@ -9,16 +9,27 @@
             <p>@UserB.Name</p><output class="percentage-output">@percentageB%</output>
         </div>
     </div>
-    <h5>Change user order</h5>
+    <h5>Change user position</h5>
     <label class="switch">
-        <input type="checkbox" id="toggleSwitch">
+        <input type="checkbox" id="toggleSwitch" @bind="IsOrderReversed" @onclick="ToggleOrder">
         <span class="slider round"></span>
     </label>
 </section>
 
 
 @code {
-    // Define the parameters
+    [Parameter] 
+    public bool IsOrderReversed { get; set; }
+
+    [Parameter] 
+    public EventCallback<bool> IsOrderReversedChanged { get; set; }
+
+    private async Task ToggleOrder()
+    {
+        IsOrderReversed = !IsOrderReversed;
+        await IsOrderReversedChanged.InvokeAsync(IsOrderReversed);
+    }
+
     [Parameter]
     public int percentageA { get; set; }
 
