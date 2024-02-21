@@ -82,7 +82,7 @@ h5[b-kpxijb7gfo] {
 
 
 .column[b-thzb36r6r1] {
-    max-width: 38%;
+    width: 100%
     min-width: 320px;
     flex: 1;
     padding: 10px;
@@ -118,9 +118,13 @@ main[b-2ewkxwj2la] {
 }
 
 .order-1[b-2ewkxwj2la] {
-    order: 1; 
+    order: 1;
+    display: flex;
+    width: 40%;
 }
 
 .order-2[b-2ewkxwj2la] {
-    order: 2; 
+    order: 2;
+    display: flex;
+    width: 40%;
 }
