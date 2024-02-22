@@ -17,15 +17,14 @@
 <main>
     <div class="@(IsOrderReversed ? "order-2" : "order-1")">
         <ColumnaUsuario User="@UserA"
-            CambiarUser="@CambiarUser"            
+            CambiarUser="@CambiarUser"     
         />
     </div>
     <div class="@(IsOrderReversed ? "order-1" : "order-2")">
         <ColumnaUsuario User="@UserB"                        
             CambiarUser="@CambiarUser"
-          />
+           />
     </div>
-    
 </main>
 
 
@@ -57,13 +56,13 @@
         {
             UserA.Name = user.Name;
             Console.WriteLine($"UserA updated to: {UserA.Name}");
-          
+
         }
         else if (user.Id == 2)
         {
             UserB.Name = user.Name;
             Console.WriteLine($"UserB updated to: {UserB.Name}");
-        
+
         }
         else
         {
@@ -71,6 +70,8 @@
         }
         StateHasChanged();
     }
+
+   
 
 
     private UserReq UserA { get; set; } = new UserReq { Id = 1, Name = "User A" };

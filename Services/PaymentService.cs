@@ -28,5 +28,17 @@ namespace PairXpensesFS.Services
             
             return new List<PaymentReq>();
         }
+
+        public async Task CreatePaymentAsync(Payment payment)
+        {
+            try
+            {
+                HttpResponseMessage response = await _httpClient.PostAsJsonAsync("api/Payment", payment);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

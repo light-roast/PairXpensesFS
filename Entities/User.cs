@@ -1,4 +1,4 @@
-namespace PairXpensesFS;
+namespace PairExpensesFS.Entities;
 using System.Collections.Generic;
 
 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PairXpensesFS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4eeb403401365ff04cc31e075f1a7992a7511c8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5230d02238152ad433d1d756772790ddae6a13e")]
 [assembly: System.Reflection.AssemblyProductAttribute("PairXpensesFS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PairXpensesFS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

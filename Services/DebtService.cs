@@ -36,5 +36,17 @@ namespace PairXpensesFS.Services
 
             }
         }
+
+        public async Task CreateDebtAsync(Debt debt)
+        {
+            try
+            {
+                HttpResponseMessage response = await _httpClient.PostAsJsonAsync("api/Debt", debt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }
