@@ -1,17 +1,49 @@
 ﻿@using PairExpensesFS.Entities
 @using System.Globalization
+@inject Services.PaymentService PaymentService
 <article>
-	@if(payment != null){
+	@if (isEdit)
+	{
+		<div class="debt-edit-form">
+			<label for="paymentName">Name:</label>
+			<input id="paymentName" type="text" @bind="NewName" maxlength="30" />
+			<label for="paymentValue">Value:</label>
+			<input id="paymentValue" type="number" @bind="NewValue" />
+			<button @onclick="HandleUpdateClick">Update</button>
+		</div>
+	}
+	else
+	{
+		@if (payment != null)
+		{
 
-		<h5><Icon id="icon" Name="IconName.PencilSquare" /> @payment.Name:</h5>
-		<p>@currency</p>
-		<p>@payment.CreateDate.ToString("dd/MM/yy")</p>
-	}	
+			<h5><Icon Name="IconName.Trash" @onclick="DeletePayment" /> <Icon id="icon" Name="IconName.PencilSquare" @onclick="HandleEditClick" /> @payment.Name:</h5>
+			<p>@currency</p>
+			<p>@payment.CreateDate.ToString("dd/MM/yy")</p>
+		}
+	}
+	
 </article>
 
 @code {
+	private bool isEdit = false;
+	private string? NewName { get; set; }
+	private long NewValue { get; set; }
+	private PaymentReq? ToUpdate { get; set; }
+
 	[Parameter]
 	public PaymentReq? payment { get; set; }
+
+	[Parameter]
+	public EventCallback<int> OnDeletePayment { get; set; }
+
+	private async Task DeletePayment()
+	{
+		if(payment != null)
+		{
+			await OnDeletePayment.InvokeAsync(payment.Id);
+		}
+	}
 
 	private string? currency { get; set; }
 
@@ -22,6 +54,28 @@
 			currency = payment.Value.ToString("C0", CultureInfo.GetCultureInfo("es-CO"));
 		}
 
+	}
+
+
+	private void HandleEditClick()
+	{
+		isEdit = true;
+	}
+
+	private async Task HandleUpdateClick()
+	{
+		if (NewValue != 0 && !string.IsNullOrEmpty(NewName) && payment != null)
+		{
+			var updatedPayment = await PaymentService.UpdatePayment(payment.Id, NewName, NewValue);
+			if (updatedPayment!= null && updatedPayment.Name != "FailedUpdate")
+			{
+				payment = updatedPayment; // Update the component's debt parameter with the new values
+				currency = payment.Value.ToString("C0", CultureInfo.GetCultureInfo("es-CO")); // Update the currency display
+				isEdit = false; // Exit edit mode
+
+				StateHasChanged(); // Request the component to re-render
+			}
+		}
 	}
 	
 }

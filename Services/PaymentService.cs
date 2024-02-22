@@ -1,5 +1,7 @@
 ﻿using PairExpensesFS.Entities;
 using System.Net.Http.Json;
+using System.Text.Json;
+using System.Text;
 
 namespace PairXpensesFS.Services
 {
@@ -12,7 +14,7 @@ namespace PairXpensesFS.Services
             _httpClient = httpClient;
         }
 
-        public async Task<List<PaymentReq>> GetPaymentByUserAsync(int id)
+        public async Task<List<PaymentReq>> GetPaymentsByUserAsync(int id)
         {
             var response = await _httpClient.GetAsync("api/Payment/user/" + id);
 
@@ -40,5 +42,41 @@ namespace PairXpensesFS.Services
                 Console.WriteLine(ex.Message);
             }
         }
-    }
+
+		public async Task<bool> DeletePaymentAsync(int id)
+		{
+			var response = await _httpClient.DeleteAsync($"api/Payment/{id}");
+			return response.IsSuccessStatusCode;
+		}
+
+		public async Task<PaymentReq> UpdatePayment(int Id, string NewName, long Value)
+		{
+			var updateModel = new PaymentReq { Id = Id, Name = NewName, Value = Value };
+
+			var response = await _httpClient.PatchAsync($"api/Payment/{Id}", new StringContent(JsonSerializer.Serialize(updateModel), Encoding.UTF8, "application/json"));
+
+			if (response.IsSuccessStatusCode)
+			{
+				var responseBody = await response.Content.ReadAsStringAsync();
+				Console.WriteLine("JSON Payload: " + responseBody);
+				var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true }; // Handle case sensitivity
+				var updatedUser = JsonSerializer.Deserialize<PaymentReq>(responseBody, options);
+
+				if (updatedUser != null)
+				{
+					return updatedUser;
+				}
+				else
+				{
+					Console.WriteLine("Deserialization of user failed.");
+				}
+			}
+			else
+			{
+				Console.WriteLine("Failed to update user. Status code: " + response.StatusCode);
+			}
+
+			return new PaymentReq() { Id = Id, Name = "FailedUpdate", Value = 0 };
+		}
+	}
 }

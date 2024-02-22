@@ -19,11 +19,12 @@
                     <h3>@User.Name</h3>
                 }
 
-                <Icon id="icon" Name="IconName.PencilSquare" @onclick="HandleEditClick" />
+                <Icon id="icon" Name="IconName.PencilSquare"  @onclick="HandleEditClick" />
             </div>
         }
     </div>
-    <form @onsubmit="CreateItem">
+    
+    <form @onsubmit="CreateItem" class="form-container">
         <h3>Add new entry:</h3>
         <select @bind="selectedItemType">
             <option value="Debt">Debt</option>
@@ -33,22 +34,22 @@
         @if (selectedItemType == "Debt")
         {
             <div>
-                <label for="debtName">Debt Name:</label>
+                <label for="debtName">Name:</label>
                 <input type="text" id="debtName" @bind="debtName" />
             </div>
             <div>
-                <label for="debtValue">Debt Value:</label>
+                <label for="debtValue">Value:</label>
                 <input type="number" id="debtValue" @bind="debtValue" />
             </div>
         }
         else if (selectedItemType == "Payment")
         {
             <div>
-                <label for="paymentName">Payment Name:</label>
+                <label for="paymentName">Name:</label>
                 <input type="text" id="paymentName" @bind="paymentName" />
             </div>
             <div>
-                <label for="paymentValue">Payment Value:</label>
+                <label for="paymentValue">Value:</label>
                 <input type="number" id="paymentValue" @bind="paymentValue" />
             </div>
         }
@@ -65,7 +66,9 @@
         {
             @foreach (var payment in payments)
             {
-                <PaymentComponent payment="@payment"/>
+                <PaymentComponent payment="@payment" 
+                    OnDeletePayment="DeletePaymentItem" 
+                    />
             }
         }
         
@@ -81,7 +84,10 @@
         {
             @foreach (var debt in debts)
             {
-                <DebtComponent debt="@debt" />
+                <DebtComponent 
+                    debt="@debt" 
+                    OnDeleteDebt="DeleteDebtItem"                               
+                    />
             }
         }
         
@@ -135,12 +141,12 @@
     {
         if (User != null)
         {
-            payments = await PaymentService.GetPaymentByUserAsync(User.Id);
+            payments = await PaymentService.GetPaymentsByUserAsync(User.Id);
         }
 
         if (User != null)
         {
-            debts = await DebtService.GetDebtByUserAsync(User.Id);
+            debts = await DebtService.GetDebtsByUserAsync(User.Id);
         }
     }
 
@@ -213,9 +219,9 @@
             {
                 Debt debt = new Debt { Name = debtName, Value = debtValue, UserId = User.Id };
                 await DebtService.CreateDebtAsync(debt);
-                debts = await DebtService.GetDebtByUserAsync(User.Id);
+                debts = await DebtService.GetDebtsByUserAsync(User.Id);
                 await InvokeAsync(StateHasChanged);
-                
+
             }
         }
         else if (selectedItemType == "Payment")
@@ -224,12 +230,38 @@
             {
                 Payment payment = new Payment { Name = paymentName, Value = paymentValue, UserId = User.Id };
                 await PaymentService.CreatePaymentAsync(payment);
-                payments = await PaymentService.GetPaymentByUserAsync(User.Id);
+                payments = await PaymentService.GetPaymentsByUserAsync(User.Id);
                 await InvokeAsync(StateHasChanged);
-               
+
             }
         }
     }
+
+    public async Task DeletePaymentItem(int id)
+    {
+        var response = await PaymentService.DeletePaymentAsync(id);
+        if(User != null)
+        {
+            payments = await PaymentService.GetPaymentsByUserAsync(User.Id);
+            await InvokeAsync(StateHasChanged);
+        }
+
+    }
+
+    public async Task DeleteDebtItem(int id)
+    {
+        var response = await DebtService.DeleteDebtAsync(id);
+        if (User != null)
+        {
+            debts = await DebtService.GetDebtsByUserAsync(User.Id);
+            await InvokeAsync(StateHasChanged);
+        }
+
+    }
+
+    
+
+    
 }
 
 

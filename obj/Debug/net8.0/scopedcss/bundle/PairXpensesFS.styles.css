@@ -97,7 +97,7 @@ h5[b-kpxijb7gfo] {
     align-items: center;
     justify-content:center;
     margin: 0 auto;
-    border-bottom: 1px solid #ccc;
+    
 }
 
 input[b-thzb36r6r1] {
@@ -130,6 +130,52 @@ h3[b-thzb36r6r1]{
         border-top: 1px solid #ccc;
         padding-right: 5px;
         padding-left: 5px;
+    }
+
+.form-container[b-thzb36r6r1] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px; /* Adjust the gap as needed */
+    justify-content: center;
+    border-bottom: 1px solid #ccc;
+}
+
+    .form-container > div[b-thzb36r6r1],
+    .form-container > select[b-thzb36r6r1],
+    .form-container > button[b-thzb36r6r1] {
+        flex: 1; /* Adjust the flex basis as needed */
+    }
+
+    
+    .form-container > div[b-thzb36r6r1] {
+        display: flex;
+        align-items: center;
+    }
+
+    .form-container label[b-thzb36r6r1] {
+        margin-right: 5px;
+    }
+
+    
+    .form-container select[b-thzb36r6r1],
+    .form-container button[b-thzb36r6r1] {
+        width: 80px;
+    }
+
+    
+    .form-container input[type="number"][b-thzb36r6r1] {
+        width: 80px; 
+    }
+
+    .form-container input[type="text"][b-thzb36r6r1]{
+        width: 120px;
+    }
+    .form-container > div[b-thzb36r6r1],
+    .form-container > select[b-thzb36r6r1],
+    .form-container > button[b-thzb36r6r1] {
+        flex-shrink: 0;
+        flex-grow: 0;
     }
 /* /Pages/Home.razor.rz.scp.css */
 nav[b-2ewkxwj2la] {

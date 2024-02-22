@@ -59,15 +59,12 @@ namespace PairXpensesFS.Services
             if (response.IsSuccessStatusCode)
             {
                 var responseBody = await response.Content.ReadAsStringAsync();
-                Console.WriteLine("Response JSON: " + responseBody); // Log the raw JSON response
 
                 var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true }; // Handle case sensitivity
                 var updatedUser = JsonSerializer.Deserialize<UserReq>(responseBody, options);
 
                 if (updatedUser != null)
                 {
-                    Console.WriteLine("Deserialized user: " + updatedUser.Name);
-                    Console.WriteLine("Deserialized id: " + updatedUser.Id);
                     return updatedUser;
                 }
                 else

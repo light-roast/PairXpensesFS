@@ -1,11 +1,14 @@
 ﻿@using PairExpensesFS.Entities
 @using System.Globalization
+@inject Services.DebtService DebtService
 
 <style>
 	article {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		justify-content: center;
+		justify-items: center;
+		align-items: center;
 		border-bottom: 1px solid #ccc;
 	}
 
@@ -13,18 +16,81 @@
 		article > * {
 			justify-self: center;
 		}
+
+		input[type=number]::-webkit-inner-spin-button,
+		input[type=number]::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		input[type=number] {
+			-moz-appearance: textfield; 
+		}
+
+		i:hover{
+			cursor:pointer;
+		}
+
+	.debt-edit-form {
+		display: inline-flex; /* or inline-block */
+		flex-wrap: nowrap; /* Ensures items stay in a single row */
+		align-items: center; /* Align items vertically */
+		grid-column: 1 / 4;
+	}
+
+	
+        .debt-edit-form input[type="text"],
+        .debt-edit-form input[type="number"],
+        .debt-edit-form button {
+			flex-shrink: 1;
+			max-width: 70px;
+        }
+    
 </style>
 <article>
-	@if(debt != null){
-		<h5><Icon id="icon" Name="IconName.PencilSquare" /> @debt.Name:</h5>
-		<p>@currency</p>
-		<p>@debt.CreateDate.ToString("dd/MM/yy")</p>
-	}	
+	@if (isEdit)
+	{
+		<div class="debt-edit-form">
+			<label for="debtName">Name:</label>
+			<input id="debtName" type="text" @bind="NewName" maxlength="30" />
+			<label for="debtValue">Value:</label>
+			<input id="debtValue" type="number" @bind="NewValue" />
+			<button @onclick="HandleUpdateClick">Update</button>
+		</div>
+	}
+	else
+	{
+		@if (debt != null)
+		{
+			<h5><Icon Name="IconName.Trash" @onclick="DeleteDebt" /> <Icon @onclick="HandleEditClick" id=" icon" Name="IconName.PencilSquare" /> @debt.Name:</h5>
+			<p>@currency</p>
+			<p>@debt.CreateDate.ToString("dd/MM/yy")</p>
+		}
+	}
+	
 </article>
 
 @code {
+	private bool isEdit = false;
+	private string? NewName { get; set; } 
+	private long NewValue { get; set; }
+	private DebtReq? ToUpdate { get; set; }
+
 	[Parameter]
 	public DebtReq? debt { get; set; }
+
+	[Parameter]
+	public EventCallback<int> OnDeleteDebt { get; set; }
+
+
+	private async Task DeleteDebt()
+	{
+		if(debt != null)
+		{
+			await OnDeleteDebt.InvokeAsync(debt.Id);
+		}
+		
+	}
 
 	private string? currency { get; set; }
 
@@ -35,5 +101,27 @@
 			currency = debt.Value.ToString("C0", CultureInfo.GetCultureInfo("es-CO"));
 		}
 		
+	}
+
+
+	private void HandleEditClick()
+	{
+		isEdit = true;
+	}
+
+	private async Task HandleUpdateClick()
+	{
+		if (NewValue != 0 && !string.IsNullOrEmpty(NewName) && debt != null)
+		{
+			var updatedDebt = await DebtService.UpdateDebt(debt.Id, NewName, NewValue);
+			if (updatedDebt != null && updatedDebt.Name != "FailedUpdate")
+			{
+				debt = updatedDebt; // Update the component's debt parameter with the new values
+				currency = debt.Value.ToString("C0", CultureInfo.GetCultureInfo("es-CO")); // Update the currency display
+				isEdit = false; // Exit edit mode
+				
+				StateHasChanged(); // Request the component to re-render
+			}
+		}
 	}
 }

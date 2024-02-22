@@ -14,7 +14,7 @@
     align-items: center;
     justify-content:center;
     margin: 0 auto;
-    border-bottom: 1px solid #ccc;
+    
 }
 
 input {
@@ -47,4 +47,50 @@ h3{
         border-top: 1px solid #ccc;
         padding-right: 5px;
         padding-left: 5px;
+    }
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px; /* Adjust the gap as needed */
+    justify-content: center;
+    border-bottom: 1px solid #ccc;
+}
+
+    .form-container > div,
+    .form-container > select,
+    .form-container > button {
+        flex: 1; /* Adjust the flex basis as needed */
+    }
+
+    
+    .form-container > div {
+        display: flex;
+        align-items: center;
+    }
+
+    .form-container label {
+        margin-right: 5px;
+    }
+
+    
+    .form-container select,
+    .form-container button {
+        width: 80px;
+    }
+
+    
+    .form-container input[type="number"] {
+        width: 80px; 
+    }
+
+    .form-container input[type="text"]{
+        width: 120px;
+    }
+    .form-container > div,
+    .form-container > select,
+    .form-container > button {
+        flex-shrink: 0;
+        flex-grow: 0;
     }
