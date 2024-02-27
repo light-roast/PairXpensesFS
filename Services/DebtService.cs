@@ -2,6 +2,8 @@
 using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text;
+using System.Net.Http.Formatting;
+
 
 namespace PairXpensesFS.Services
 {
@@ -84,6 +86,51 @@ namespace PairXpensesFS.Services
 			}
 
 			return new DebtReq() { Id = Id, Name = "FailedUpdate", Value = 0 };
+		}
+
+		public async Task<long?> GetTotalDebtByUser(int userId)
+		{
+			try
+			{
+				// Make the API call
+				HttpResponseMessage response = await _httpClient.GetAsync($"api/Debt/total/{userId}");
+
+				// Check if the call was successful
+				response.EnsureSuccessStatusCode();
+
+				// Read the response content
+				if (response.IsSuccessStatusCode)
+				{
+                    string content = await response.Content.ReadAsStringAsync();
+                    long totalDebt;
+                    if (long.TryParse(content, out totalDebt))
+                    {
+                        return totalDebt;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+				else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+				{
+					// Handle bad request
+					return null;
+				}
+				else
+				{
+					// Handle other error cases
+					return null;
+				}
+			}
+			catch (Exception ex)
+			{
+				// Handle any exceptions
+				// Log the error, show a message to the user, etc.
+				// You can throw the exception or return a default value
+				Console.WriteLine($"Error: {ex.Message}");
+				return null;
+			}
 		}
 	}
 }

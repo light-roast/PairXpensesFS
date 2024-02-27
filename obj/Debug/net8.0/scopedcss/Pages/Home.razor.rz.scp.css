@@ -24,3 +24,27 @@ main[b-2ewkxwj2la] {
     width: 45%;
     min-width: 345px;
 }
+
+section > h1[b-2ewkxwj2la] {
+    text-align: center;
+}
+
+button[b-2ewkxwj2la] {
+    background-color: #007bff; /* Bootstrap primary color for importance */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    button:hover[b-2ewkxwj2la] {
+        background-color: #0056b3; /* Darker shade for hover effect */
+    }
+
+    button:active[b-2ewkxwj2la] {
+        background-color: #003d82; /* Even darker shade for active/click effect */
+        transform: translateY(2px); /* Slight push down effect */
+    }

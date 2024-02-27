@@ -78,5 +78,50 @@ namespace PairXpensesFS.Services
 
 			return new PaymentReq() { Id = Id, Name = "FailedUpdate", Value = 0 };
 		}
-	}
+
+        public async Task<long?> GetTotalPaymentByUser(int userId)
+        {
+            try
+            {
+                HttpResponseMessage response = await _httpClient.GetAsync($"api/Payment/total/{userId}");
+                Console.WriteLine(response);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+                    long totalPayment;
+                    if (long.TryParse(content, out totalPayment))
+                    {
+                        return totalPayment;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                else
+                {
+                    // Log the status code and content for debugging
+                    string content = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"Error: Status Code: {response.StatusCode}, Content: {content}");
+
+                    if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                    {
+                        // Handle bad request
+                        return null;
+                    }
+                    else
+                    {
+                        // Handle other error cases
+                        return null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return null;
+            }
+        }
+    }
 }

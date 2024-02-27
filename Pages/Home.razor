@@ -2,6 +2,8 @@
 @using Services
 @using PairExpensesFS.Entities
 @inject Services.UserService UserService
+@inject Services.DebtService DebtService
+@inject Services.PaymentService PaymentService
 
 <PageTitle>PairXpenses</PageTitle>
 <nav>
@@ -26,6 +28,10 @@
            />
     </div>
 </main>
+<section>
+    <h1><button @onclick="GenerateReport">Generate report</button></h1>
+    <h1>@report</h1>
+</section>
 
 
 
@@ -33,6 +39,15 @@
     private List<UserReq>? users;
 
     private bool IsOrderReversed { get; set; } = false;
+    private long APayments { get; set; }
+    private long ADebts { get; set; }
+    private long BPayments { get; set; }
+    private long BDebts { get; set; }
+    private string report { get; set; } = "Nothing to report yet.";
+
+    private UserReq UserA { get; set; } = new UserReq { Id = 1, Name = "User A" };
+    private UserReq UserB { get; set; } = new UserReq { Id = 2, Name = "User B" };
+
     private void HandleToggle(bool newValue)
     {
         IsOrderReversed = newValue;
@@ -71,13 +86,130 @@
         StateHasChanged();
     }
 
-   
+    private async Task GenerateReport()
+    {
+        long totalExpense;
+        string? userWhoSpendMost = "Both users spent equally";
+        await GetTotals();
+        if (APayments == 0 && BPayments == 0 && ADebts == 0 && BDebts == 0)
+        {
+            report = "Nothing to report yet. No payments and debts registered or an error ocurred during the total values consulting";
+        }
+        else
+        {
+            totalExpense = APayments + BPayments;
+            decimal expenseForA = totalExpense * percentageA / 100;
+            decimal expenseForB = totalExpense - expenseForA;
+            if (APayments > expenseForA)
+            {
+                if(UserA != null)
+                {
+                    userWhoSpendMost = UserA.Name;
+                }
+
+            }
+            else if (BPayments > expenseForB)
+            {
+                userWhoSpendMost = UserB.Name;
+            }
+
+            decimal debtFromAtoB = 0;
+            decimal debtFromBtoA = 0;
+
+            if (APayments > expenseForA)
+            {
+                debtFromBtoA = APayments - expenseForA;
+            }
+            else if (BPayments > expenseForB)
+            {
+                debtFromAtoB = BPayments - expenseForB;
+            }
+
+            report = $"Total expense: {totalExpense}. ";
+            if (userWhoSpendMost != "Both users spent equally")
+            {
+                report += $"{userWhoSpendMost} spent more than their share ({percentageA}%) during the month. ";
+            }
 
 
-    private UserReq UserA { get; set; } = new UserReq { Id = 1, Name = "User A" };
 
-   
-    private UserReq UserB { get; set; } = new UserReq { Id = 2, Name = "User B" };
+
+            if (debtFromBtoA > 0)
+            {
+                decimal totalBDebt = debtFromBtoA + BDebts;
+                if(totalBDebt > ADebts)
+                {
+                    totalBDebt -= ADebts;
+                    if (UserA != null && UserB != null)
+                    {
+                        report += $"{UserB.Name} owes {UserA.Name} {totalBDebt} for the excess payment.";
+                    }
+                }
+                else
+                {
+                    decimal totalADebt = ADebts - totalBDebt;
+                    if (UserB != null && UserA != null)
+                    {
+                        report += $"{UserA.Name} owes {UserB.Name} {totalADebt} for the excess payment.";
+                    }
+                }
+
+
+            }
+            else if (debtFromAtoB > 0)
+            {
+                decimal totalADebt = debtFromAtoB + ADebts;
+                if(totalADebt > BDebts)
+                {
+                    if (UserA != null && UserB != null)
+                    {
+                        report += $"{UserA.Name} owes {UserB.Name} {totalADebt} for the excess payment.";
+                    }
+                }
+                else
+                {
+                    decimal totalBDebt = BDebts - totalADebt;
+                    if (UserA != null && UserB != null)
+                    {
+                        report += $"{UserB.Name} owes {UserA.Name} {totalBDebt} for the excess payment.";
+                    }
+
+                }
+
+            }
+            else
+            {
+
+                report += "By checking debts is safe to say that both users spent within their share.";
+            }
+        }
+    }
+
+    private async Task GetTotals()
+    {
+        try
+        {
+            BDebts = await DebtService.GetTotalDebtByUser(UserB.Id) ?? 0;
+            Console.WriteLine("BD" + BDebts);
+
+            APayments = await PaymentService.GetTotalPaymentByUser(UserA.Id) ?? 0;
+            Console.WriteLine("AP" + APayments);
+
+            BPayments = await PaymentService.GetTotalPaymentByUser(UserB.Id) ?? 0;
+            Console.WriteLine("BP" + BPayments);
+
+            ADebts = await DebtService.GetTotalDebtByUser(UserA.Id) ?? 0;
+            Console.WriteLine("AD" + ADebts);
+            
+            
+
+        }
+        catch (Exception ex)
+        {
+
+            Console.WriteLine($"Error generating report: {ex.Message}");
+        }
+    }
 
     
     private void PercentageAChanged(int newValue)
