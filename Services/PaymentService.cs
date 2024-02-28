@@ -122,5 +122,19 @@ namespace PairXpensesFS.Services
                 return null;
             }
         }
+
+        public async Task<string> DeleteAllPaymentsAsync()
+        {
+            HttpResponseMessage response = await _httpClient.DeleteAsync("api/Payment/deleteall");
+
+            if (response.IsSuccessStatusCode)
+            {
+                return "All Payments deleted successfully.";
+            }
+            else
+            {
+                return $"Error: {response.StatusCode}";
+            }
+        }
     }
 }

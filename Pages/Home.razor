@@ -4,6 +4,7 @@
 @inject Services.UserService UserService
 @inject Services.DebtService DebtService
 @inject Services.PaymentService PaymentService
+@inject NavigationManager NavigationManager
 @using System.Globalization
 
 <PageTitle>PairXpenses</PageTitle>
@@ -20,23 +21,32 @@
 <main>
     <div class="@(IsOrderReversed ? "order-2" : "order-1")">
         <ColumnaUsuario User="@UserA"
-            CambiarUser="@CambiarUser"     
-        />
+            CambiarUser="@CambiarUser"
+            RefreshContent="@refreshChildContent" />
     </div>
     <div class="@(IsOrderReversed ? "order-1" : "order-2")">
         <ColumnaUsuario User="@UserB"                        
             CambiarUser="@CambiarUser"
-           />
+            RefreshContent="@refreshChildContent" />
     </div>
 </main>
 <section>
-    <h1><button @onclick="GenerateReport">Generate report</button></h1>
-    <h1>@report1</h1>
-    <h1>@report2</h1>
-    <h1>@report3</h1>
-    <h1>@report4</h1>
-    <h1>@report5</h1>
-    <h1>@finalReport</h1>
+    <button @onclick="GenerateReport">Generate report</button>
+    <div>
+        @if (isConfirmationVisible)
+        {
+            <div class="confirmation-dialog">
+                <p>Are you sure you want to start a new month and reset debts and payments?</p>
+                <button @onclick="ConfirmDelete">Yes</button>
+                <button id="no" @onclick="CancelDelete">No</button>
+            </div>
+        }
+        else
+        {
+            <button @onclick="DeleteAllItems">Reset debts and payments</button>
+        }
+    </div>
+    
 </section>
 
 
@@ -55,6 +65,7 @@
     private string report4 { get; set; } = "Nothing to report yet.";
     private string report5 { get; set; } = "Nothing to report yet.";
     private string finalReport { get; set; } = "Nothing to report yet";
+    private int percentageA;
 
     private UserReq UserA { get; set; } = new UserReq { Id = 1, Name = "User A" };
     private UserReq UserB { get; set; } = new UserReq { Id = 2, Name = "User B" };
@@ -64,7 +75,7 @@
         IsOrderReversed = newValue;
     }
 
-    private int percentageA;
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -106,6 +117,8 @@
         if (APayments == 0 && BPayments == 0 && ADebts == 0 && BDebts == 0)
         {
             report1 = "Nothing to report yet. No payments and debts registered or an error ocurred during the total values consulting";
+            NavigateToNoReport();
+            return;
         }
         else
         {
@@ -125,8 +138,8 @@
                 debtFromBtoA = APayments - expenseForA;
                 report2 = $"{userWhoSpendMost} spent {APayments.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))} during the month. Wich is more than their share ({percentageA}% / {expenseForA.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}). \n ";
                 report3 = BPayments != 0 ? $"{userWhoSpendLess} spent {BPayments.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))} during the month. Wich is less than their share ({100 - percentageA}% / {expenseForB.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}). \n" : $"{userWhoSpendLess} did not register payments during the month and their share is {100 - percentageA}% / {expenseForB.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}. \n";
-                report4 = ADebts != 0 ? $"{userWhoSpendMost} accumulated a total of debts with {userWhoSpendLess} amounting to {ADebts.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}" : $"{userWhoSpendMost} does not have any debts with {userWhoSpendLess}";
-                report5 = BDebts != 0 ? $"{userWhoSpendLess} accumulated a total of debts with {userWhoSpendMost} amounting to {BDebts.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}": $"{userWhoSpendLess} does not have any debts with {userWhoSpendMost}";
+                report4 = ADebts != 0 ? $"{userWhoSpendMost} accumulated a total of debts with {userWhoSpendLess} amounting to {ADebts.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}" : $"{userWhoSpendMost} does not have any debts with {userWhoSpendLess}.";
+                report5 = BDebts != 0 ? $"{userWhoSpendLess} accumulated a total of debts with {userWhoSpendMost} amounting to {BDebts.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}": $"{userWhoSpendLess} does not have any debts with {userWhoSpendMost}.";
 
             }
             else if (BPayments > expenseForB)
@@ -139,8 +152,8 @@
                 debtFromAtoB = BPayments - expenseForB;
                 report2 = $"{userWhoSpendMost} spent {BPayments.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))} during the month. Wich is more than their share ({100 - percentageA}% / {expenseForB.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}). \n ";
                 report3 = APayments != 0 ? $"{userWhoSpendLess} spent {APayments.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))} during the month. Wich is less than their share ({percentageA}% / {expenseForA.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}). \n" : $"{userWhoSpendLess} did not register payments during the month and their share is {percentageA}% / {expenseForA.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}. \n";
-                report4 = BDebts != 0 ? $"{userWhoSpendMost} accumulated a total of debts with {userWhoSpendLess} amounting to {BDebts.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}" : $"{userWhoSpendMost} does not have any debts with {userWhoSpendLess}";
-                report5 = ADebts != 0 ? $"{userWhoSpendLess} accumulated a total of debts with {userWhoSpendMost} amounting to {ADebts.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}" : $"{userWhoSpendLess} does not have any debts with {userWhoSpendMost}";
+                report4 = BDebts != 0 ? $"{userWhoSpendMost} accumulated a total of debts with {userWhoSpendLess} amounting to {BDebts.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}" : $"{userWhoSpendMost} does not have any debts with {userWhoSpendLess}.";
+                report5 = ADebts != 0 ? $"{userWhoSpendLess} accumulated a total of debts with {userWhoSpendMost} amounting to {ADebts.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}" : $"{userWhoSpendLess} does not have any debts with {userWhoSpendMost}.";
             }
 
 
@@ -189,6 +202,20 @@
                 finalReport = "Both users spent within their share and neither owes anything to the other.";
             }
         }
+        NavigateToReport();
+    }
+
+    private void NavigateToReport()
+    {
+        // Pass report data as query parameters
+        var uri = $"report?report1={report1}&report2={report2}&report3={report3}&report4={report4}&report5={report5}&finalReport={finalReport}";
+        NavigationManager.NavigateTo(uri, forceLoad: true);
+    }
+
+    private void NavigateToNoReport()
+    {
+        
+        NavigationManager.NavigateTo("/NoReport");
     }
 
     private async Task GetTotals()
@@ -222,4 +249,34 @@
     {
         percentageA = newValue;
     }
+
+    //Logic to handle reset
+    private bool isConfirmationVisible = false;
+
+    private void DeleteAllItems()
+    {
+        // Show confirmation dialog
+        isConfirmationVisible = true;
+    }
+
+    private async Task ConfirmDelete()
+    {
+        if (isConfirmationVisible)
+        {
+            await DebtService.DeleteAllDebtsAsync();
+            await PaymentService.DeleteAllPaymentsAsync();
+
+            isConfirmationVisible = false;
+            refreshChildContent = true;
+            StateHasChanged();
+        }
+    }
+
+    private void CancelDelete()
+    {
+        // Hide confirmation dialog if user cancels
+        isConfirmationVisible = false;
+    }
+
+    private bool refreshChildContent = false;
 }

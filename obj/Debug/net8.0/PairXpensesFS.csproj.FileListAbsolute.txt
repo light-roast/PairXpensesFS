@@ -1178,3 +1178,5 @@ D:\Projects\PairXpensesFS\obj\Debug\net8.0\compressed\bnap2x8qsj.gz
 D:\Projects\PairXpensesFS\obj\Debug\net8.0\scopedcss\Components\ColumnaUsuario.razor.rz.scp.css
 D:\Projects\PairXpensesFS\obj\Debug\net8.0\scopedcss\Components\DebtComponent.razor.rz.scp.css
 D:\Projects\PairXpensesFS\obj\Debug\net8.0\scopedcss\Components\PaymentComponent.razor.rz.scp.css
+D:\Projects\PairXpensesFS\obj\Debug\net8.0\scopedcss\Pages\Report.razor.rz.scp.css
+D:\Projects\PairXpensesFS\obj\Debug\net8.0\scopedcss\Pages\NoReport.razor.rz.scp.css

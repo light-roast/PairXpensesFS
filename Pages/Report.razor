@@ -1,0 +1,87 @@
+﻿@page "/report"
+@inject NavigationManager NavigationManager
+
+<div class="report-container">
+    <div>
+    <h1>PairXpenses Report</h1>
+    <h3>@report1</h3>
+    <h4>@report2</h4>
+    <h4>@report3</h4>
+    <h4>@report4</h4>
+    <h4>@report5</h4>
+    <h2>@finalReport</h2>
+        <Button @onclick="ReturnToHomePage" Color="ButtonColor.Primary"><Icon Name="IconName.ArrowLeftCircleFill" /> Return Home </Button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string? report1 { get; set; }
+
+    [Parameter]
+    public string? report2 { get; set; }
+
+    [Parameter]
+    public string? report3 { get; set; }
+
+    [Parameter]
+    public string? report4 { get; set; }
+
+    [Parameter]
+    public string? report5 { get; set; }
+
+    [Parameter]
+    public string? finalReport { get; set; }
+
+    protected override void OnInitialized()
+    {
+        // Extract report data from query parameters
+        var uri = new Uri(NavigationManager.Uri);
+        var queryString = uri.Query;
+
+        if (!string.IsNullOrEmpty(queryString))
+        {
+            var queryParameters = queryString.TrimStart('?').Split('&');
+            foreach (var parameter in queryParameters)
+            {
+                var keyValue = parameter.Split('=');
+                if (keyValue.Length == 2)
+                {
+                    var key = keyValue[0];
+                    var value = Uri.UnescapeDataString(keyValue[1]);
+
+                    switch (key)
+                    {
+                        case "report1":
+                            report1 = value;
+                            break;
+                        case "report2":
+                            report2 = value;
+                            break;
+                        case "report3":
+                            report3 = value;
+                            break;
+                        case "report4":
+                            report4 = value;
+                            break;
+                        case "report5":
+                            report5 = value;
+                            break;
+                        case "finalReport":
+                            finalReport = value;
+                            break;
+                        default:
+ 
+                            break;
+                    }
+                }
+            }
+        }
+    }
+
+    private void ReturnToHomePage()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}
+

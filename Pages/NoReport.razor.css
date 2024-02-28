@@ -1,0 +1,43 @@
+﻿.report-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust as needed */
+    text-align: center;
+}
+
+    .report-container div {
+        border: 1px solid black;
+        padding: 2rem;
+    }
+
+h1 {
+    border-bottom: 1px solid black;
+}
+
+
+.report-container button {
+    margin-top: 20px; /* Adjust as needed */
+}
+
+
+::deep button {
+    background-color: #007bff; /* Bootstrap primary color for importance */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    ::deep button:hover {
+        background-color: #0056b3; /* Darker shade for hover effect */
+    }
+
+    ::deep button:active {
+        background-color: #003d82; /* Even darker shade for active/click effect */
+        transform: translateY(2px); /* Slight push down effect */
+    }

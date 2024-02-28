@@ -1,0 +1,16 @@
+﻿@page "/NoReport"
+@inject NavigationManager NavigationManager
+
+<div class="report-container">
+    <div>
+        <h1>"Nothing to report yet. No payments and debts registered or an error ocurred during the total values consulting"</h1>
+        <Button @onclick="ReturnToHomePage" Color="ButtonColor.Primary"><Icon Name="IconName.ArrowLeftCircleFill" /> Return Home </Button>
+    </div>
+</div>
+
+@code {
+    private void ReturnToHomePage()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}

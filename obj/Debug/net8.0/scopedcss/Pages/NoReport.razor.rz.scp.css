@@ -1,0 +1,43 @@
+.report-container[b-wa8yy699i7] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust as needed */
+    text-align: center;
+}
+
+    .report-container div[b-wa8yy699i7] {
+        border: 1px solid black;
+        padding: 2rem;
+    }
+
+h1[b-wa8yy699i7] {
+    border-bottom: 1px solid black;
+}
+
+
+.report-container button[b-wa8yy699i7] {
+    margin-top: 20px; /* Adjust as needed */
+}
+
+
+[b-wa8yy699i7] button {
+    background-color: #007bff; /* Bootstrap primary color for importance */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    [b-wa8yy699i7] button:hover {
+        background-color: #0056b3; /* Darker shade for hover effect */
+    }
+
+    [b-wa8yy699i7] button:active {
+        background-color: #003d82; /* Even darker shade for active/click effect */
+        transform: translateY(2px); /* Slight push down effect */
+    }

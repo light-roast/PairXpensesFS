@@ -131,5 +131,19 @@ namespace PairXpensesFS.Services
 				return null;
 			}
 		}
-	}
+
+        public async Task<string> DeleteAllDebtsAsync()
+        {
+            HttpResponseMessage response = await _httpClient.DeleteAsync("api/Debt/deleteall");
+
+            if (response.IsSuccessStatusCode)
+            {
+                return "All Debts deleted successfully.";
+            }
+            else
+            {
+                return $"Error: {response.StatusCode}";
+            }
+        }
+    }
 }

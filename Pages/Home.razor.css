@@ -25,9 +25,20 @@ main {
     min-width: 345px;
 }
 
-section > h1 {
-    text-align: center;
+section {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+    flex-wrap: wrap;
 }
+
+    section div {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 250px;
+    }
 
 button {
     background-color: #007bff; /* Bootstrap primary color for importance */
@@ -38,6 +49,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin: 5px;
 }
 
     button:hover {
@@ -46,5 +58,27 @@ button {
 
     button:active {
         background-color: #003d82; /* Even darker shade for active/click effect */
+        transform: translateY(2px); /* Slight push down effect */
+    }
+
+
+#no {
+    background-color: red; /* Red base color */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+    #no:hover {
+        background-color: #cc0000; /* Darker shade of red for hover effect */
+    }
+
+    #no:active {
+        background-color: #990000; /* Even darker shade of red for active/click effect */
         transform: translateY(2px); /* Slight push down effect */
     }

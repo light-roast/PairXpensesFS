@@ -35,7 +35,7 @@
         {
             <div>
                 <label for="debtName">Name:</label>
-                <input required type="text" id="debtName" @bind="debtName" />
+                <input required type="text" id="debtName" @bind="debtName" placeholder="Enter Name"/>
             </div>
             <div>
                 <label for="debtValue">Value:</label>
@@ -46,7 +46,7 @@
         {
             <div>
                 <label for="paymentName">Name:</label>
-                <input required type="text" id="paymentName" @bind="paymentName" />
+                <input required type="text" id="paymentName" @bind="paymentName" placeholder="Enter Name" />
             </div>
             <div>
                 <label for="paymentValue">Value:</label>
@@ -96,7 +96,7 @@
 
 @code {
 
-    private string selectedItemType = "Debt"; // Default selected item type
+    private string selectedItemType = "Payment"; // Default selected item type
     private string? debtName;
     private long debtValue;
     private string? paymentName;
@@ -221,6 +221,8 @@
                 await DebtService.CreateDebtAsync(debt);
                 debts = await DebtService.GetDebtsByUserAsync(User.Id);
                 await InvokeAsync(StateHasChanged);
+                debtName = "";
+                debtValue = 0;
 
             }
         }
@@ -232,9 +234,11 @@
                 await PaymentService.CreatePaymentAsync(payment);
                 payments = await PaymentService.GetPaymentsByUserAsync(User.Id);
                 await InvokeAsync(StateHasChanged);
-
+                paymentName = "";
+                paymentValue = 0;
             }
         }
+
     }
 
     public async Task DeletePaymentItem(int id)
@@ -257,6 +261,27 @@
             await InvokeAsync(StateHasChanged);
         }
 
+    }
+
+    //Handle refresh after reseting
+
+    [Parameter]
+    public bool RefreshContent { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (RefreshContent)
+        {
+            if(User != null)
+            {
+                // Refresh the data
+                payments = await PaymentService.GetPaymentsByUserAsync(User.Id);
+                debts = await DebtService.GetDebtsByUserAsync(User.Id);
+            }
+            
+            // Reset the refresh trigger
+            RefreshContent = false;
+        }
     }
 
     
