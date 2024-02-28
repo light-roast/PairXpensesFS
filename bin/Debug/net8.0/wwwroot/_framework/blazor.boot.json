@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "PairXpensesFS",
   "resources": {
-    "hash": "sha256-sIIVG29QMh0pdZjxi5eiTlwKO2ICBYWWDtExvJ/mScs=",
+    "hash": "sha256-eDsMDIAIWp5DvYPQC4FOlaifu9heYxvqfnNrj4RqBgo=",
     "jsModuleNative": {
       "dotnet.native.8.0.1.3575p5c4nx.js": "sha256-SGOlISx+3G4kkvpC9Uq3qoPGsnjxGmW61QBev0lyI5U="
     },
@@ -237,10 +237,10 @@
       "mscorlib.wasm": "sha256-EpWTfh4m/hEcXRFYMCR9YeYHwdUJgcm1laBaxWfq2S4=",
       "netstandard.wasm": "sha256-2kH24/YfHmU3B4eYRyRmiwebYROM4+B9eDWKvMnUdP8=",
       "System.Private.CoreLib.wasm": "sha256-CsySKiP7HYY1pS8LTDE60EkqiX5oHb3WoEZHDNd1yK0=",
-      "PairXpensesFS.wasm": "sha256-o4ehs84iHRci5JDcSWBPH/8CsrRsEgKD7GUKoMsRltw="
+      "PairXpensesFS.wasm": "sha256-uuhDNv6NW+sXj8C4hdRswI9fz6fRcwlIuR8E3BXfadQ="
     },
     "pdb": {
-      "PairXpensesFS.pdb": "sha256-Kvkpp+kgkpvBGDjARAlPCJ8NsLriGy1udfmjMqfKHzE="
+      "PairXpensesFS.pdb": "sha256-3R7gKJJA400Zy7Me/Ll8oLb/gvVWt5aaLFTzH/GiT/I="
     }
   },
   "cacheBootResources": true,

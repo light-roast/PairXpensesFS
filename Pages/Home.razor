@@ -4,6 +4,7 @@
 @inject Services.UserService UserService
 @inject Services.DebtService DebtService
 @inject Services.PaymentService PaymentService
+@using System.Globalization
 
 <PageTitle>PairXpenses</PageTitle>
 <nav>
@@ -30,7 +31,12 @@
 </main>
 <section>
     <h1><button @onclick="GenerateReport">Generate report</button></h1>
-    <h1>@report</h1>
+    <h1>@report1</h1>
+    <h1>@report2</h1>
+    <h1>@report3</h1>
+    <h1>@report4</h1>
+    <h1>@report5</h1>
+    <h1>@finalReport</h1>
 </section>
 
 
@@ -43,7 +49,12 @@
     private long ADebts { get; set; }
     private long BPayments { get; set; }
     private long BDebts { get; set; }
-    private string report { get; set; } = "Nothing to report yet.";
+    private string report1 { get; set; } = "Nothing to report yet.";
+    private string report2 { get; set; } = "Nothing to report yet.";
+    private string report3 { get; set; } = "Nothing to report yet.";
+    private string report4 { get; set; } = "Nothing to report yet.";
+    private string report5 { get; set; } = "Nothing to report yet.";
+    private string finalReport { get; set; } = "Nothing to report yet";
 
     private UserReq UserA { get; set; } = new UserReq { Id = 1, Name = "User A" };
     private UserReq UserB { get; set; } = new UserReq { Id = 2, Name = "User B" };
@@ -90,97 +101,92 @@
     {
         long totalExpense;
         string? userWhoSpendMost = "Both users spent equally";
+        string? userWhoSpendLess = "Both users spent equally";
         await GetTotals();
         if (APayments == 0 && BPayments == 0 && ADebts == 0 && BDebts == 0)
         {
-            report = "Nothing to report yet. No payments and debts registered or an error ocurred during the total values consulting";
+            report1 = "Nothing to report yet. No payments and debts registered or an error ocurred during the total values consulting";
         }
         else
         {
             totalExpense = APayments + BPayments;
             decimal expenseForA = totalExpense * percentageA / 100;
             decimal expenseForB = totalExpense - expenseForA;
-            if (APayments > expenseForA)
-            {
-                if(UserA != null)
-                {
-                    userWhoSpendMost = UserA.Name;
-                }
-
-            }
-            else if (BPayments > expenseForB)
-            {
-                userWhoSpendMost = UserB.Name;
-            }
-
             decimal debtFromAtoB = 0;
             decimal debtFromBtoA = 0;
-
+            report1 = $"Total pair expenses during the month: {totalExpense.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}. \n";
             if (APayments > expenseForA)
             {
+                if (UserA != null && UserB != null)
+                {
+                    userWhoSpendMost = UserA.Name;
+                    userWhoSpendLess = UserB.Name;
+                }
                 debtFromBtoA = APayments - expenseForA;
+                report2 = $"{userWhoSpendMost} spent {APayments.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))} during the month. Wich is more than their share ({percentageA}% / {expenseForA.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}). \n ";
+                report3 = BPayments != 0 ? $"{userWhoSpendLess} spent {BPayments.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))} during the month. Wich is less than their share ({100 - percentageA}% / {expenseForB.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}). \n" : $"{userWhoSpendLess} did not register payments during the month and their share is {100 - percentageA}% / {expenseForB.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}. \n";
+                report4 = ADebts != 0 ? $"{userWhoSpendMost} accumulated a total of debts with {userWhoSpendLess} amounting to {ADebts.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}" : $"{userWhoSpendMost} does not have any debts with {userWhoSpendLess}";
+                report5 = BDebts != 0 ? $"{userWhoSpendLess} accumulated a total of debts with {userWhoSpendMost} amounting to {BDebts.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}": $"{userWhoSpendLess} does not have any debts with {userWhoSpendMost}";
+
             }
             else if (BPayments > expenseForB)
             {
+                if (UserA != null && UserB != null)
+                {
+                    userWhoSpendMost = UserB.Name;
+                    userWhoSpendLess = UserA.Name;
+                }
                 debtFromAtoB = BPayments - expenseForB;
+                report2 = $"{userWhoSpendMost} spent {BPayments.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))} during the month. Wich is more than their share ({100 - percentageA}% / {expenseForB.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}). \n ";
+                report3 = APayments != 0 ? $"{userWhoSpendLess} spent {APayments.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))} during the month. Wich is less than their share ({percentageA}% / {expenseForA.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}). \n" : $"{userWhoSpendLess} did not register payments during the month and their share is {percentageA}% / {expenseForA.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}. \n";
+                report4 = BDebts != 0 ? $"{userWhoSpendMost} accumulated a total of debts with {userWhoSpendLess} amounting to {BDebts.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}" : $"{userWhoSpendMost} does not have any debts with {userWhoSpendLess}";
+                report5 = ADebts != 0 ? $"{userWhoSpendLess} accumulated a total of debts with {userWhoSpendMost} amounting to {ADebts.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}" : $"{userWhoSpendLess} does not have any debts with {userWhoSpendMost}";
             }
 
-            report = $"Total expense: {totalExpense}. ";
-            if (userWhoSpendMost != "Both users spent equally")
-            {
-                report += $"{userWhoSpendMost} spent more than their share ({percentageA}%) during the month. ";
-            }
 
 
 
-
+            string userAName = UserA?.Name ?? "Unknown";
+            string userBName = UserB?.Name ?? "Unknown";
             if (debtFromBtoA > 0)
             {
                 decimal totalBDebt = debtFromBtoA + BDebts;
-                if(totalBDebt > ADebts)
+                decimal netDebt = totalBDebt - ADebts;
+
+                if (netDebt > 0)
                 {
-                    totalBDebt -= ADebts;
-                    if (UserA != null && UserB != null)
-                    {
-                        report += $"{UserB.Name} owes {UserA.Name} {totalBDebt} for the excess payment.";
-                    }
+                    finalReport = $"{userBName} owes {userAName} {netDebt.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))} for the month's expenses.";
+                }
+                else if (netDebt < 0)
+                {
+                    finalReport = $"{userAName} owes {userBName} {(-netDebt).ToString("C0", CultureInfo.GetCultureInfo("es-CO"))} for the month's expenses.";
                 }
                 else
                 {
-                    decimal totalADebt = ADebts - totalBDebt;
-                    if (UserB != null && UserA != null)
-                    {
-                        report += $"{UserA.Name} owes {UserB.Name} {totalADebt} for the excess payment.";
-                    }
+                    finalReport = "Both users spent within their share and neither owes anything to the other.";
                 }
-
-
             }
             else if (debtFromAtoB > 0)
             {
                 decimal totalADebt = debtFromAtoB + ADebts;
-                if(totalADebt > BDebts)
+                decimal netDebt = totalADebt - BDebts;
+
+                if (netDebt > 0)
                 {
-                    if (UserA != null && UserB != null)
-                    {
-                        report += $"{UserA.Name} owes {UserB.Name} {totalADebt} for the excess payment.";
-                    }
+                    finalReport = $"{userAName} owes {userBName} {netDebt.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))} for the month's expenses.";
+                }
+                else if (netDebt < 0)
+                {
+                    finalReport = $"{userBName} owes {userAName} {(-netDebt).ToString("C0", CultureInfo.GetCultureInfo("es-CO"))} for the month's expenses.";
                 }
                 else
                 {
-                    decimal totalBDebt = BDebts - totalADebt;
-                    if (UserA != null && UserB != null)
-                    {
-                        report += $"{UserB.Name} owes {UserA.Name} {totalBDebt} for the excess payment.";
-                    }
-
+                    finalReport = "Both users spent within their share and neither owes anything to the other.";
                 }
-
             }
             else
             {
-
-                report += "By checking debts is safe to say that both users spent within their share.";
+                finalReport = "Both users spent within their share and neither owes anything to the other.";
             }
         }
     }
@@ -190,16 +196,16 @@
         try
         {
             BDebts = await DebtService.GetTotalDebtByUser(UserB.Id) ?? 0;
-            Console.WriteLine("BD" + BDebts);
+            
 
             APayments = await PaymentService.GetTotalPaymentByUser(UserA.Id) ?? 0;
-            Console.WriteLine("AP" + APayments);
+            
 
             BPayments = await PaymentService.GetTotalPaymentByUser(UserB.Id) ?? 0;
-            Console.WriteLine("BP" + BPayments);
+            
 
             ADebts = await DebtService.GetTotalDebtByUser(UserA.Id) ?? 0;
-            Console.WriteLine("AD" + ADebts);
+            
             
             
 
