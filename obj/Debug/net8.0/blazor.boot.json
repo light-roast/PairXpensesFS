@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "PairXpensesFS",
   "resources": {
-    "hash": "sha256-Rh4AXV67uUVswYhKDwKRKy6HEOBiTDMYB77eW6ABH3U=",
+    "hash": "sha256-sIIVG29QMh0pdZjxi5eiTlwKO2ICBYWWDtExvJ/mScs=",
     "jsModuleNative": {
       "dotnet.native.8.0.1.3575p5c4nx.js": "sha256-SGOlISx+3G4kkvpC9Uq3qoPGsnjxGmW61QBev0lyI5U="
     },
@@ -19,7 +19,6 @@
     "assembly": {
       "BlazorBootstrap.wasm": "sha256-Fk7MP6gWaesp6rh0S05MhUP7zyV/yQwoaDJ7NiZj4jQ=",
       "Jenin.FontAwesome.Blazor.wasm": "sha256-7wVJUsG3SsVxvnivcYgfDPCfet7izPulvspEhXtrymc=",
-      "System.Net.Http.Formatting.wasm": "sha256-UnnsaNnAtvbPmwU+W9Zj7sdU05nYJziM6pYpbeaK1dg=",
       "Microsoft.AspNetCore.Authentication.Abstractions.wasm": "sha256-oAXcIdUt9+kjPhP9YJ/MlV8+u5fnOwSvkbyqQ30CmbY=",
       "Microsoft.AspNetCore.Authentication.Core.wasm": "sha256-QxUYDZNgOcks403zDTSzkWcRqKmVvvzKwBEW/PvJ7Ak=",
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-a3TAIY/5lCJNfNr3HdaMXQ+pT7yTFPbDmuOnfh2Cdps=",
@@ -69,7 +68,6 @@
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-8ZmspJkZmC3f4GMqPqk6W5CyBwEQmFOQfvB6+C/wXTI=",
       "Microsoft.Net.Http.Headers.wasm": "sha256-b59APrldqivzbOYVb0CV+lGgWn4HyUPjMa/cplEp2x8=",
       "Newtonsoft.Json.wasm": "sha256-DBfpbduzEP2lTeFZddrFGuNDOcOwgBPZwFsTYJEFsSA=",
-      "Newtonsoft.Json.Bson.wasm": "sha256-VxfTY/Ckiz5BNvQbcB31OYXhY4HGHJtODt5rRbjDIK0=",
       "System.IO.Pipelines.wasm": "sha256-JqVBy6SV+3qk+IK3VJiyIDt9CsVk6b1/ytTXmrI4mTM=",
       "Microsoft.CSharp.wasm": "sha256-MFKAVM13VEKdW9npIPysmWBPDcIGLeyZkbjYeRyw79c=",
       "Microsoft.VisualBasic.Core.wasm": "sha256-mewpZaCRJIDcBfdhm/sIQ+/qJtudrsQw+GL7m+U9cs4=",
@@ -239,10 +237,10 @@
       "mscorlib.wasm": "sha256-EpWTfh4m/hEcXRFYMCR9YeYHwdUJgcm1laBaxWfq2S4=",
       "netstandard.wasm": "sha256-2kH24/YfHmU3B4eYRyRmiwebYROM4+B9eDWKvMnUdP8=",
       "System.Private.CoreLib.wasm": "sha256-CsySKiP7HYY1pS8LTDE60EkqiX5oHb3WoEZHDNd1yK0=",
-      "PairXpensesFS.wasm": "sha256-TAEaTjUsxmp37s2xhzTsuy16S4YxgUT2P3cT80whp78="
+      "PairXpensesFS.wasm": "sha256-o4ehs84iHRci5JDcSWBPH/8CsrRsEgKD7GUKoMsRltw="
     },
     "pdb": {
-      "PairXpensesFS.pdb": "sha256-yRkrB+0CqtN1REHsiIt5ijwYswfQOSugCf6hQ2tyeDw="
+      "PairXpensesFS.pdb": "sha256-Kvkpp+kgkpvBGDjARAlPCJ8NsLriGy1udfmjMqfKHzE="
     }
   },
   "cacheBootResources": true,

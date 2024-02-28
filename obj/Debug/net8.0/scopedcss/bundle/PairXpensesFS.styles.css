@@ -177,6 +177,94 @@ h3[b-thzb36r6r1]{
         flex-shrink: 0;
         flex-grow: 0;
     }
+
+input[type=number][b-thzb36r6r1]::-webkit-inner-spin-button,
+input[type=number][b-thzb36r6r1]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* /Components/DebtComponent.razor.rz.scp.css */
+article[b-3fho6sik8h] {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    justify-content: center !important;
+    justify-items: center !important;
+    align-items: center !important;
+    border-bottom: 1px solid #ccc !important;
+}
+
+    article > *[b-3fho6sik8h] {
+        justify-self: center !important;
+    }
+
+[b-3fho6sik8h] input::-webkit-inner-spin-button,
+[b-3fho6sik8h] input::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+
+input[type=number][b-3fho6sik8h] {
+    -moz-appearance: textfield !important;
+}
+
+i:hover[b-3fho6sik8h] {
+    cursor: pointer !important;
+}
+
+[b-3fho6sik8h] #debt-edit-form {
+    display: inline-flex !important; /* or inline-block */
+    flex-wrap: nowrap !important; /* Ensures items stay in a single row */
+    align-items: center !important; /* Align items vertically */
+    grid-column: 1 / 4 !important;
+}
+
+[b-3fho6sik8h] input,
+[b-3fho6sik8h] input,
+[b-3fho6sik8h] file-selector-button {
+    flex-shrink: 1 !important;
+    max-width: 70px !important;
+}
+/* /Components/PaymentComponent.razor.rz.scp.css */
+article[b-r8q39ujmbo] {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    justify-content: center !important;
+    justify-items: center !important;
+    align-items: center !important;
+    border-bottom: 1px solid #ccc !important;
+}
+
+    article > *[b-r8q39ujmbo] {
+        justify-self: center !important;
+    }
+
+[b-r8q39ujmbo] input::-webkit-inner-spin-button,
+[b-r8q39ujmbo] input::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+
+input[type=number][b-r8q39ujmbo] {
+    -moz-appearance: textfield !important;
+}
+
+i:hover[b-r8q39ujmbo] {
+    cursor: pointer !important;
+}
+
+[b-r8q39ujmbo] #debt-edit-form {
+    display: inline-flex !important; /* or inline-block */
+    flex-wrap: nowrap !important; /* Ensures items stay in a single row */
+    align-items: center !important; /* Align items vertically */
+    grid-column: 1 / 4 !important;
+}
+
+    [b-r8q39ujmbo] input,
+    [b-r8q39ujmbo] input,
+    [b-r8q39ujmbo] file-selector-button {
+        flex-shrink: 1 !important;
+        max-width: 70px !important;
+    }
 /* /Pages/Home.razor.rz.scp.css */
 nav[b-2ewkxwj2la] {
     display: flex;

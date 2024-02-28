@@ -1,16 +1,19 @@
 ﻿@using PairExpensesFS.Entities
 @using System.Globalization
 @inject Services.PaymentService PaymentService
+@using System.ComponentModel.DataAnnotations
+
 <article>
 	@if (isEdit)
 	{
-		<div class="debt-edit-form">
+		<EditForm Model="@paymentValidation" id="debt-edit-form" OnSubmit="HandleUpdateClick">
+			<DataAnnotationsValidator />
 			<label for="paymentName">Name:</label>
-			<input id="paymentName" type="text" @bind="NewName" maxlength="30" />
+			<InputText id="paymentName" @bind-Value="paymentValidation.Name" placeholder="Enter name" />
 			<label for="paymentValue">Value:</label>
-			<input id="paymentValue" type="number" @bind="NewValue" />
-			<button @onclick="HandleUpdateClick">Update</button>
-		</div>
+			<InputNumber id="paymentValue" @bind-Value="paymentValidation.Value" />
+			<button type="submit">Update</button>
+		</EditForm>
 	}
 	else
 	{
@@ -26,9 +29,8 @@
 </article>
 
 @code {
+	public PaymentValidation paymentValidation = new PaymentValidation();
 	private bool isEdit = false;
-	private string? NewName { get; set; }
-	private long NewValue { get; set; }
 	private PaymentReq? ToUpdate { get; set; }
 
 	[Parameter]
@@ -64,18 +66,34 @@
 
 	private async Task HandleUpdateClick()
 	{
-		if (NewValue != 0 && !string.IsNullOrEmpty(NewName) && payment != null)
+		if (payment != null && paymentValidation != null && ValidateForm())
 		{
-			var updatedPayment = await PaymentService.UpdatePayment(payment.Id, NewName, NewValue);
-			if (updatedPayment!= null && updatedPayment.Name != "FailedUpdate")
+			// Ensure NewName is not null before calling PaymentService.UpdatePayment
+			if (!string.IsNullOrEmpty(paymentValidation.Name))
 			{
-				payment = updatedPayment; // Update the component's debt parameter with the new values
-				currency = payment.Value.ToString("C0", CultureInfo.GetCultureInfo("es-CO")); // Update the currency display
-				isEdit = false; // Exit edit mode
+				var updatedPayment = await PaymentService.UpdatePayment(payment.Id, paymentValidation.Name, paymentValidation.Value);
+				if (updatedPayment != null && updatedPayment.Name != "FailedUpdate")
+				{
+					payment = updatedPayment;
+					currency = payment.Value.ToString("C0", CultureInfo.GetCultureInfo("es-CO"));
+					isEdit = false;
 
-				StateHasChanged(); // Request the component to re-render
+					StateHasChanged();
+				}
 			}
 		}
+	}
+
+
+
+	private bool ValidateForm()
+	{
+		// Validate the form using the built-in ValidateModel method
+		var validationResults = new List<ValidationResult>();
+		var validationContext = new ValidationContext(paymentValidation);
+		bool isValid = Validator.TryValidateObject(paymentValidation, validationContext, validationResults, true);
+
+		return isValid;
 	}
 	
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zntM7l29o4zCpG26TSS+dn0/62FoUUwNG8AZqOSAEIA=",
+  "Hash": "nBRfxV+ZfjaBwUcTDBz5IxDeqiDgn+eZIequ6hvBL+E=",
   "Source": "PairXpensesFS",
   "BasePath": "/",
   "Mode": "Root",
@@ -1537,25 +1537,6 @@
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\webcil\\netstandard.wasm"
     },
     {
-      "Identity": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Newtonsoft.Json.Bson.wasm",
-      "SourceId": "PairXpensesFS",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Newtonsoft.Json.Bson.wasm",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "WasmResource",
-      "AssetTraitValue": "runtime",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\webcil\\Newtonsoft.Json.Bson.wasm"
-    },
-    {
       "Identity": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Newtonsoft.Json.wasm",
       "SourceId": "PairXpensesFS",
       "SourceType": "Computed",
@@ -2713,25 +2694,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\webcil\\System.Memory.wasm"
-    },
-    {
-      "Identity": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Net.Http.Formatting.wasm",
-      "SourceId": "PairXpensesFS",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/System.Net.Http.Formatting.wasm",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "WasmResource",
-      "AssetTraitValue": "runtime",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\webcil\\System.Net.Http.Formatting.wasm"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Net.Http.Json.wasm",
@@ -7579,25 +7541,6 @@
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Diagnostics.TextWriterTraceListener.wasm"
     },
     {
-      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\ncb7c5yn44.gz",
-      "SourceId": "PairXpensesFS",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/System.Net.Http.Formatting.wasm.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Net.Http.Formatting.wasm",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Net.Http.Formatting.wasm"
-    },
-    {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\neudxtkrbg.gz",
       "SourceId": "PairXpensesFS",
       "SourceType": "Computed",
@@ -7748,25 +7691,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\mscorlib.wasm"
-    },
-    {
-      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\oafec3ic4j.gz",
-      "SourceId": "PairXpensesFS",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Newtonsoft.Json.Bson.wasm.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Newtonsoft.Json.Bson.wasm",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Newtonsoft.Json.Bson.wasm"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\obnrsvym7h.gz",

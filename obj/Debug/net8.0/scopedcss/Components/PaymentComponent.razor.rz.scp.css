@@ -1,0 +1,40 @@
+article[b-r8q39ujmbo] {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    justify-content: center !important;
+    justify-items: center !important;
+    align-items: center !important;
+    border-bottom: 1px solid #ccc !important;
+}
+
+    article > *[b-r8q39ujmbo] {
+        justify-self: center !important;
+    }
+
+[b-r8q39ujmbo] input::-webkit-inner-spin-button,
+[b-r8q39ujmbo] input::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+
+input[type=number][b-r8q39ujmbo] {
+    -moz-appearance: textfield !important;
+}
+
+i:hover[b-r8q39ujmbo] {
+    cursor: pointer !important;
+}
+
+[b-r8q39ujmbo] #debt-edit-form {
+    display: inline-flex !important; /* or inline-block */
+    flex-wrap: nowrap !important; /* Ensures items stay in a single row */
+    align-items: center !important; /* Align items vertically */
+    grid-column: 1 / 4 !important;
+}
+
+    [b-r8q39ujmbo] input,
+    [b-r8q39ujmbo] input,
+    [b-r8q39ujmbo] file-selector-button {
+        flex-shrink: 1 !important;
+        max-width: 70px !important;
+    }

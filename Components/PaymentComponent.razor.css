@@ -1,0 +1,40 @@
+﻿article {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    justify-content: center !important;
+    justify-items: center !important;
+    align-items: center !important;
+    border-bottom: 1px solid #ccc !important;
+}
+
+    article > * {
+        justify-self: center !important;
+    }
+
+::deep input::-webkit-inner-spin-button,
+::deep input::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+
+input[type=number] {
+    -moz-appearance: textfield !important;
+}
+
+i:hover {
+    cursor: pointer !important;
+}
+
+::deep #debt-edit-form {
+    display: inline-flex !important; /* or inline-block */
+    flex-wrap: nowrap !important; /* Ensures items stay in a single row */
+    align-items: center !important; /* Align items vertically */
+    grid-column: 1 / 4 !important;
+}
+
+    ::deep input,
+    ::deep input,
+    ::deep file-selector-button {
+        flex-shrink: 1 !important;
+        max-width: 70px !important;
+    }

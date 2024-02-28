@@ -58,7 +58,6 @@ namespace PairXpensesFS.Services
 			if (response.IsSuccessStatusCode)
 			{
 				var responseBody = await response.Content.ReadAsStringAsync();
-				Console.WriteLine("JSON Payload: " + responseBody);
 				var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true }; // Handle case sensitivity
 				var updatedUser = JsonSerializer.Deserialize<PaymentReq>(responseBody, options);
 

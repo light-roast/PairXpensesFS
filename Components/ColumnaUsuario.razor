@@ -35,22 +35,22 @@
         {
             <div>
                 <label for="debtName">Name:</label>
-                <input type="text" id="debtName" @bind="debtName" />
+                <input required type="text" id="debtName" @bind="debtName" />
             </div>
             <div>
                 <label for="debtValue">Value:</label>
-                <input type="number" id="debtValue" @bind="debtValue" />
+                <input type="number" id="debtValue" @bind="debtValue" min="0" />
             </div>
         }
         else if (selectedItemType == "Payment")
         {
             <div>
                 <label for="paymentName">Name:</label>
-                <input type="text" id="paymentName" @bind="paymentName" />
+                <input required type="text" id="paymentName" @bind="paymentName" />
             </div>
             <div>
                 <label for="paymentValue">Value:</label>
-                <input type="number" id="paymentValue" @bind="paymentValue" />
+                <input type="number" id="paymentValue" @bind="paymentValue" min="0"/>
             </div>
         }
 

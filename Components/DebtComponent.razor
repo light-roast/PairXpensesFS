@@ -1,62 +1,21 @@
 ﻿@using PairExpensesFS.Entities
 @using System.Globalization
 @inject Services.DebtService DebtService
+@using System.ComponentModel.DataAnnotations
 
-<style>
-	article {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		justify-content: center;
-		justify-items: center;
-		align-items: center;
-		border-bottom: 1px solid #ccc;
-	}
 
-		
-		article > * {
-			justify-self: center;
-		}
-
-		input[type=number]::-webkit-inner-spin-button,
-		input[type=number]::-webkit-outer-spin-button {
-			-webkit-appearance: none;
-			margin: 0;
-		}
-
-		input[type=number] {
-			-moz-appearance: textfield; 
-		}
-
-		i:hover{
-			cursor:pointer;
-		}
-
-	.debt-edit-form {
-		display: inline-flex; /* or inline-block */
-		flex-wrap: nowrap; /* Ensures items stay in a single row */
-		align-items: center; /* Align items vertically */
-		grid-column: 1 / 4;
-	}
-
-	
-        .debt-edit-form input[type="text"],
-        .debt-edit-form input[type="number"],
-        .debt-edit-form button {
-			flex-shrink: 1;
-			max-width: 70px;
-        }
-    
-</style>
 <article>
 	@if (isEdit)
 	{
-		<div class="debt-edit-form">
+		<EditForm Model="@debtValidation" id="debt-edit-form" OnSubmit="HandleUpdateClick">
+			<DataAnnotationsValidator />
+			<ValidationSummary />
 			<label for="debtName">Name:</label>
-			<input id="debtName" type="text" @bind="NewName" maxlength="30" />
+			<InputText id="debtName" @bind-Value="debtValidation.Name" placeholder="Enter name" />
 			<label for="debtValue">Value:</label>
-			<input id="debtValue" type="number" @bind="NewValue" />
-			<button @onclick="HandleUpdateClick">Update</button>
-		</div>
+			<InputNumber id="debtValue" @bind-Value="debtValidation.Value" />
+			<button type="submit">Update</button>
+		</EditForm>
 	}
 	else
 	{
@@ -71,8 +30,11 @@
 </article>
 
 @code {
+
+	public DebtValidation debtValidation = new DebtValidation();
+
 	private bool isEdit = false;
-	private string? NewName { get; set; } 
+	private string? NewName { get; set; }
 	private long NewValue { get; set; }
 	private DebtReq? ToUpdate { get; set; }
 
@@ -111,17 +73,32 @@
 
 	private async Task HandleUpdateClick()
 	{
-		if (NewValue != 0 && !string.IsNullOrEmpty(NewName) && debt != null)
+		if (debt != null && debtValidation != null && ValidateForm())
 		{
-			var updatedDebt = await DebtService.UpdateDebt(debt.Id, NewName, NewValue);
-			if (updatedDebt != null && updatedDebt.Name != "FailedUpdate")
+			// Ensure NewName is not null before calling DebtService.UpdateDebt
+			if (!string.IsNullOrEmpty(debtValidation.Name))
 			{
-				debt = updatedDebt; // Update the component's debt parameter with the new values
-				currency = debt.Value.ToString("C0", CultureInfo.GetCultureInfo("es-CO")); // Update the currency display
-				isEdit = false; // Exit edit mode
-				
-				StateHasChanged(); // Request the component to re-render
+				var updatedDebt = await DebtService.UpdateDebt(debt.Id, debtValidation.Name, debtValidation.Value);
+				if (updatedDebt != null && updatedDebt.Name != "FailedUpdate")
+				{
+					debt = updatedDebt;
+					currency = debt.Value.ToString("C0", CultureInfo.GetCultureInfo("es-CO"));
+					isEdit = false;
+
+					StateHasChanged();
+				}
 			}
 		}
 	}
+
+	private bool ValidateForm()
+	{
+		// Validate the form using the built-in ValidateModel method
+		var validationResults = new List<ValidationResult>();
+		var validationContext = new ValidationContext(debtValidation);
+		bool isValid = Validator.TryValidateObject(debtValidation, validationContext, validationResults, true);
+
+		return isValid;
+	}
+
 }

@@ -1176,13 +1176,5 @@ D:\Projects\PairXpensesFS\bin\Debug\net8.0\BlazorBootstrap.dll
 D:\Projects\PairXpensesFS\obj\Debug\net8.0\webcil\BlazorBootstrap.wasm
 D:\Projects\PairXpensesFS\obj\Debug\net8.0\compressed\bnap2x8qsj.gz
 D:\Projects\PairXpensesFS\obj\Debug\net8.0\scopedcss\Components\ColumnaUsuario.razor.rz.scp.css
-D:\Projects\PairXpensesFS\bin\Debug\net8.0\wwwroot\_framework\Newtonsoft.Json.Bson.wasm
-D:\Projects\PairXpensesFS\bin\Debug\net8.0\wwwroot\_framework\System.Net.Http.Formatting.wasm
-D:\Projects\PairXpensesFS\bin\Debug\net8.0\wwwroot\_framework\System.Net.Http.Formatting.wasm.gz
-D:\Projects\PairXpensesFS\bin\Debug\net8.0\wwwroot\_framework\Newtonsoft.Json.Bson.wasm.gz
-D:\Projects\PairXpensesFS\bin\Debug\net8.0\System.Net.Http.Formatting.dll
-D:\Projects\PairXpensesFS\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
-D:\Projects\PairXpensesFS\obj\Debug\net8.0\webcil\System.Net.Http.Formatting.wasm
-D:\Projects\PairXpensesFS\obj\Debug\net8.0\webcil\Newtonsoft.Json.Bson.wasm
-D:\Projects\PairXpensesFS\obj\Debug\net8.0\compressed\ncb7c5yn44.gz
-D:\Projects\PairXpensesFS\obj\Debug\net8.0\compressed\oafec3ic4j.gz
+D:\Projects\PairXpensesFS\obj\Debug\net8.0\scopedcss\Components\DebtComponent.razor.rz.scp.css
+D:\Projects\PairXpensesFS\obj\Debug\net8.0\scopedcss\Components\PaymentComponent.razor.rz.scp.css
