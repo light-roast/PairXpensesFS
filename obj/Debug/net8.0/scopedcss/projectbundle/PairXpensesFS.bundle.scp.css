@@ -9,6 +9,7 @@ section[b-kpxijb7gfo] {
 
 }
 
+
 .range[b-kpxijb7gfo] {
     max-width: 55%;
 }
@@ -102,6 +103,7 @@ input:checked + .slider[b-kpxijb7gfo] {
     padding: 5px;
     color: #5E3C9C;
     margin-bottom: 7px;
+    font-family: "Expletus Sans", sans-serif;
 }
 
 .normal[b-thzb36r6r1] {
@@ -121,6 +123,7 @@ input[b-thzb36r6r1], select[b-thzb36r6r1] {
 
 h3[b-thzb36r6r1]{
     margin-right: 4px;
+    font-family: "Expletus Sans", sans-serif;
 }
 
 .PyD[b-thzb36r6r1] {
@@ -367,7 +370,7 @@ button[b-2ewkxwj2la] {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 5px;
-    font-family: "Sono", monospace;
+    font-family: "Expletus Sans", sans-serif;
 }
 
     button:hover[b-2ewkxwj2la] {
@@ -391,7 +394,7 @@ button[b-2ewkxwj2la] {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 5px;
-    font-family: "Sono", monospace;
+    font-family: "Expletus Sans", sans-serif;
 }
 
     #no:hover[b-2ewkxwj2la] {
