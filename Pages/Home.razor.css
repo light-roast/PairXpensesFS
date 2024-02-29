@@ -1,3 +1,4 @@
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -8,6 +9,10 @@ nav {
     padding: 15px;
     margin: 0 auto;
     border-bottom: 1px solid #5E3C9C;
+}
+
+nav h1 {
+    font-family: "Expletus Sans", sans-serif;
 }
 
 
@@ -63,6 +68,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 5px;
+    font-family: "Sono", monospace;
 }
 
     button:hover {
@@ -86,6 +92,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 5px;
+    font-family: "Sono", monospace;
 }
 
     #no:hover {
@@ -106,5 +113,6 @@ button {
 .confirmation-dialog p {
     padding: 5px;
     text-align: center;
+    font-family: "Sono", monospace;
 }
 

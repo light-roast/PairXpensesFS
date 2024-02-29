@@ -4,6 +4,7 @@ section {
     align-items: center;
     flex-direction: column;
     text-align: center;
+    font-family: "Sono", monospace;
 
 }
 
@@ -65,7 +66,7 @@ h5 {
   }
 
 input:checked + .slider {
-    background-color: #3F7875;
+    background-color: #FF8762;
 }
 
 

@@ -5,7 +5,8 @@
     align-items: center;
     height: 100vh; /* Adjust as needed */
     text-align: center;
-    
+    padding: 15px;
+    font-family: "Sono", monospace;
 }
 
     .report-container div[b-wt4abr76l2] {
@@ -13,12 +14,13 @@
         border-radius: 5px;
         padding: 2rem;
         background-color: #5E3C9C;
-        color: #FF8762;
+        color: #ddf8f1;
     }
 
 h1[b-wt4abr76l2] {
     border-bottom: 1px solid black;
-    color: white;
+    color: #FF8762;
+    font-family: "Expletus Sans", sans-serif;
 }
 
 h1[b-wt4abr76l2], h2[b-wt4abr76l2], h3[b-wt4abr76l2], h4[b-wt4abr76l2], h5[b-wt4abr76l2] {
@@ -26,7 +28,8 @@ h1[b-wt4abr76l2], h2[b-wt4abr76l2], h3[b-wt4abr76l2], h4[b-wt4abr76l2], h5[b-wt4
 }
 
 h2[b-wt4abr76l2] {
-    color: white;
+    color: #FF8762;
+    font-family: "Expletus Sans", sans-serif;
 }
 
     
@@ -36,7 +39,7 @@ h2[b-wt4abr76l2] {
 
 
 [b-wt4abr76l2] button {
-    background-color: #FF8762;
+    background-color: #C4FCEF; 
     color: #5E3C9C;
     padding: 10px 20px;
     font-size: 16px;
@@ -44,10 +47,11 @@ h2[b-wt4abr76l2] {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: "Sono", monospace;
 }
 
     [b-wt4abr76l2] button:hover {
-        background-color: #C4FCEF;
+        background-color: #FF8762;
         color: #5E3C9C;
     }
 
