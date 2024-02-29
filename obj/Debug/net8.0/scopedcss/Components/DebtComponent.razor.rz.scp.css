@@ -4,7 +4,8 @@ article[b-3fho6sik8h] {
     justify-content: center !important;
     justify-items: center !important;
     align-items: center !important;
-    border-bottom: 1px solid #ccc !important;
+    border-bottom: 1px solid #5E3C9C !important;
+    padding: 10px;
 }
 
     article > *[b-3fho6sik8h] {
@@ -17,11 +18,20 @@ article[b-3fho6sik8h] {
     margin: 0 !important;
 }
 
+[b-3fho6sik8h] input {
+    border: hidden;
+    border-radius: 2px;
+}
+
 input[type=number][b-3fho6sik8h] {
     -moz-appearance: textfield !important;
 }
 
 i:hover[b-3fho6sik8h] {
+    cursor: pointer !important;
+}
+
+[b-3fho6sik8h] i:hover {
     cursor: pointer !important;
 }
 

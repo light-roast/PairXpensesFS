@@ -4,7 +4,8 @@
     justify-content: center !important;
     justify-items: center !important;
     align-items: center !important;
-    border-bottom: 1px solid #ccc !important;
+    border-bottom: 1px solid #5E3C9C !important;
+    padding: 10px;
 }
 
     article > * {
@@ -17,11 +18,16 @@
     margin: 0 !important;
 }
 
+::deep input {
+    border: hidden;
+    border-radius: 2px;
+}
+
 input[type=number] {
     -moz-appearance: textfield !important;
 }
 
-i:hover {
+::deep i:hover {
     cursor: pointer !important;
 }
 

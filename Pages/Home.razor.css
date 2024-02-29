@@ -3,12 +3,24 @@ nav {
     justify-content: space-around;
     width: 100%;
     align-items: center;
+    background-color: #C4FCEF;
+    color: #845EC2;
+    padding: 15px;
+    margin: 0 auto;
+    border-bottom: 1px solid #5E3C9C;
 }
 
+
+
 main {
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    background-color: #5E3C9C;
+    width: 100%;
+    border-bottom: 1px solid #5E3C9C;
 }
 
 .order-1 {
@@ -26,9 +38,10 @@ main {
 }
 
 section {
+    margin: 15px;
     display: flex;
-    justify-content: space-around; 
-    align-items: center; 
+    justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -41,8 +54,8 @@ section {
     }
 
 button {
-    background-color: #007bff; /* Bootstrap primary color for importance */
-    color: white;
+    background-color: #FF8762;
+    color: #5E3C9C;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -53,7 +66,8 @@ button {
 }
 
     button:hover {
-        background-color: #0056b3; /* Darker shade for hover effect */
+        background-color: #C4FCEF; 
+        color: #5E3C9C;
     }
 
     button:active {
@@ -75,10 +89,22 @@ button {
 }
 
     #no:hover {
-        background-color: #cc0000; /* Darker shade of red for hover effect */
+        background-color: #3F7875; /* Darker shade of red for hover effect */
     }
 
     #no:active {
         background-color: #990000; /* Even darker shade of red for active/click effect */
         transform: translateY(2px); /* Slight push down effect */
     }
+
+.confirmation-dialog {
+    background-color: #845EC2;
+    padding: 5px;
+    border-radius: 5px;
+    color: #FF8762;
+}
+.confirmation-dialog p {
+    padding: 5px;
+    text-align: center;
+}
+

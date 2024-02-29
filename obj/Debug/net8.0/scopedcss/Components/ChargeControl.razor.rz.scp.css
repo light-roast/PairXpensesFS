@@ -63,10 +63,12 @@ h5[b-kpxijb7gfo] {
     transition: .4s;
     border-radius: 50%; /* Rounded slider */
   }
-  
-  input:checked + .slider[b-kpxijb7gfo] {
-    background-color: #2196F3;
-  }
+
+input:checked + .slider[b-kpxijb7gfo] {
+    background-color: #3F7875;
+}
+
+
   
   input:focus + .slider[b-kpxijb7gfo] {
     box-shadow: 0 0 1px #2196F3;

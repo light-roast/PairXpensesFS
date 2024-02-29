@@ -13,6 +13,7 @@
 			<label for="paymentValue">Value:</label>
 			<InputNumber id="paymentValue" @bind-Value="paymentValidation.Value" />
 			<button type="submit">Update</button>
+			<Icon id="elementIcon" Color="IconColor.Danger" Name="IconName.DashCircleFill" Size="IconSize.x5" @onclick="HandleEditClick" style="color: black !important;"/>
 		</EditForm>
 	}
 	else
@@ -61,8 +62,9 @@
 
 	private void HandleEditClick()
 	{
-		isEdit = true;
+		isEdit = !isEdit;
 	}
+
 
 	private async Task HandleUpdateClick()
 	{

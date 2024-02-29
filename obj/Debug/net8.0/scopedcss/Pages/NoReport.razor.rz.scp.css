@@ -5,16 +5,26 @@
     align-items: center;
     height: 100vh; /* Adjust as needed */
     text-align: center;
+    
 }
 
     .report-container div[b-wa8yy699i7] {
         border: 1px solid black;
+        border-radius: 5px;
         padding: 2rem;
+        background-color: #5E3C9C;
+        color: #FF8762;
     }
 
 h1[b-wa8yy699i7] {
     border-bottom: 1px solid black;
+    color: white;
 }
+
+h1[b-wa8yy699i7], h2[b-wa8yy699i7], h3[b-wa8yy699i7], h4[b-wa8yy699i7], h5[b-wa8yy699i7] {
+    padding: 10px;
+}
+
 
 
 .report-container button[b-wa8yy699i7] {
@@ -23,8 +33,8 @@ h1[b-wa8yy699i7] {
 
 
 [b-wa8yy699i7] button {
-    background-color: #007bff; /* Bootstrap primary color for importance */
-    color: white;
+    background-color: #FF8762;
+    color: #5E3C9C;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -34,7 +44,8 @@ h1[b-wa8yy699i7] {
 }
 
     [b-wa8yy699i7] button:hover {
-        background-color: #0056b3; /* Darker shade for hover effect */
+        background-color: #C4FCEF;
+        color: #5E3C9C;
     }
 
     [b-wa8yy699i7] button:active {

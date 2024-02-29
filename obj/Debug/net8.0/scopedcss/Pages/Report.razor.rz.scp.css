@@ -5,26 +5,39 @@
     align-items: center;
     height: 100vh; /* Adjust as needed */
     text-align: center;
+    
 }
 
-.report-container div[b-wt4abr76l2] {
-    border: 1px solid black;
-    padding: 2rem;
-}
+    .report-container div[b-wt4abr76l2] {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 2rem;
+        background-color: #5E3C9C;
+        color: #FF8762;
+    }
 
 h1[b-wt4abr76l2] {
     border-bottom: 1px solid black;
+    color: white;
+}
+
+h1[b-wt4abr76l2], h2[b-wt4abr76l2], h3[b-wt4abr76l2], h4[b-wt4abr76l2], h5[b-wt4abr76l2] {
+    padding: 10px;
+}
+
+h2[b-wt4abr76l2] {
+    color: white;
 }
 
     
     .report-container button[b-wt4abr76l2] {
-        margin-top: 20px; /* Adjust as needed */
+        margin-top: 20px; 
     }
 
 
 [b-wt4abr76l2] button {
-    background-color: #007bff; /* Bootstrap primary color for importance */
-    color: white;
+    background-color: #FF8762;
+    color: #5E3C9C;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -34,10 +47,11 @@ h1[b-wt4abr76l2] {
 }
 
     [b-wt4abr76l2] button:hover {
-        background-color: #0056b3; /* Darker shade for hover effect */
+        background-color: #C4FCEF;
+        color: #5E3C9C;
     }
 
     [b-wt4abr76l2] button:active {
-        background-color: #003d82; /* Even darker shade for active/click effect */
-        transform: translateY(2px); /* Slight push down effect */
+        background-color: #003d82; 
+        transform: translateY(2px); 
     }

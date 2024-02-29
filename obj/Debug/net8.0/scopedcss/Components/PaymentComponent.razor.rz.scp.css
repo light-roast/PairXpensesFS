@@ -4,7 +4,8 @@ article[b-r8q39ujmbo] {
     justify-content: center !important;
     justify-items: center !important;
     align-items: center !important;
-    border-bottom: 1px solid #ccc !important;
+    border-bottom: 1px solid #5E3C9C !important;
+    padding: 10px;
 }
 
     article > *[b-r8q39ujmbo] {
@@ -17,11 +18,16 @@ article[b-r8q39ujmbo] {
     margin: 0 !important;
 }
 
+[b-r8q39ujmbo] input {
+    border: hidden;
+    border-radius: 2px;
+}
+
 input[type=number][b-r8q39ujmbo] {
     -moz-appearance: textfield !important;
 }
 
-i:hover[b-r8q39ujmbo] {
+[b-r8q39ujmbo] i:hover {
     cursor: pointer !important;
 }
 

@@ -4,7 +4,7 @@
 @inject Services.PaymentService PaymentService
 @inject Services.DebtService DebtService
 <section class="column">
-    <div>
+    <div id="nombre">
         @if (isEdit)
         {
             <div class="normal">
@@ -160,13 +160,14 @@
     private void HandleEditClick()
     {
         // Set the isEdit flag to true to show the edit form
-        isEdit = true;
+        isEdit = !isEdit;
     }
 
     // Inner component for editing the user
     private RenderFragment UserEdit() => @<div>
-        <input type="text" @bind="NewUser" />
+        <input type="text" @bind="NewUser" placeholder="New name"/>
         <button @onclick="HandleUpdateClick">Update</button>
+        <Icon id="elementIcon" Color="IconColor.Danger" Name="IconName.DashCircleFill" Size="IconSize.x5" @onclick="HandleEditClick" style="color: red !important;" />
     </div>
     ;
 

@@ -5,26 +5,39 @@
     align-items: center;
     height: 100vh; /* Adjust as needed */
     text-align: center;
+    
 }
 
-.report-container div {
-    border: 1px solid black;
-    padding: 2rem;
-}
+    .report-container div {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 2rem;
+        background-color: #5E3C9C;
+        color: #FF8762;
+    }
 
 h1 {
     border-bottom: 1px solid black;
+    color: white;
+}
+
+h1, h2, h3, h4, h5 {
+    padding: 10px;
+}
+
+h2 {
+    color: white;
 }
 
     
     .report-container button {
-        margin-top: 20px; /* Adjust as needed */
+        margin-top: 20px; 
     }
 
 
 ::deep button {
-    background-color: #007bff; /* Bootstrap primary color for importance */
-    color: white;
+    background-color: #FF8762;
+    color: #5E3C9C;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -34,10 +47,11 @@ h1 {
 }
 
     ::deep button:hover {
-        background-color: #0056b3; /* Darker shade for hover effect */
+        background-color: #C4FCEF;
+        color: #5E3C9C;
     }
 
     ::deep button:active {
-        background-color: #003d82; /* Even darker shade for active/click effect */
-        transform: translateY(2px); /* Slight push down effect */
+        background-color: #003d82; 
+        transform: translateY(2px); 
     }
