@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nBRfxV+ZfjaBwUcTDBz5IxDeqiDgn+eZIequ6hvBL+E=",
+  "Hash": "cQ/kmD6Cngmc3aMkE3/Q7y02fQWmjhih1u/xyGfrICQ=",
   "Source": "PairXpensesFS",
   "BasePath": "/",
   "Mode": "Root",
@@ -9192,6 +9192,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\app.css"
+    },
+    {
+      "Identity": "D:\\Projects\\PairXpensesFS\\wwwroot\\favicon.ico",
+      "SourceId": "PairXpensesFS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\PairXpensesFS\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\wwwroot\\icon-192.png",

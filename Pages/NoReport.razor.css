@@ -3,18 +3,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Adjust as needed */
+    height: 90vh;
+    overflow-y: auto; 
     text-align: center;
     padding: 15px;
     
 }
 
     .report-container div {
-        border: 1px solid black;
         border-radius: 5px;
         padding: 2rem;
-        background-color: #5E3C9C;
-        color: #ddf8f1;
+        background-color: #3A001E;
+        color: #FFF7F3;
     }
 
 h1 {
@@ -23,9 +23,7 @@ h1 {
     font-family: "Expletus Sans", sans-serif;
 }
 
-h1, h2, h3, h4, h5 {
-    padding: 10px;
-}
+
 
 
 
@@ -35,9 +33,9 @@ h1, h2, h3, h4, h5 {
 
 
 ::deep button {
-    margin-top: 15px;
-    background-color: #C4FCEF; 
-    color: #5E3C9C;
+    margin-top: 25px;
+    background-color: #e63e0b;
+    color: #3A001E;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -49,10 +47,10 @@ h1, h2, h3, h4, h5 {
 
     ::deep button:hover {
         background-color: #FF8762;
-        color: #5E3C9C;
+        color: #3A001E;
     }
 
     ::deep button:active {
-        background-color: #003d82; 
+        background-color: #FFF7F3; 
         transform: translateY(2px); 
     }

@@ -451,18 +451,18 @@ button[b-2ewkxwj2la] {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Adjust as needed */
+    height: 90vh;
+    overflow-y: auto; 
     text-align: center;
     padding: 15px;
     
 }
 
     .report-container div[b-wa8yy699i7] {
-        border: 1px solid black;
         border-radius: 5px;
         padding: 2rem;
-        background-color: #5E3C9C;
-        color: #ddf8f1;
+        background-color: #3A001E;
+        color: #FFF7F3;
     }
 
 h1[b-wa8yy699i7] {
@@ -471,9 +471,7 @@ h1[b-wa8yy699i7] {
     font-family: "Expletus Sans", sans-serif;
 }
 
-h1[b-wa8yy699i7], h2[b-wa8yy699i7], h3[b-wa8yy699i7], h4[b-wa8yy699i7], h5[b-wa8yy699i7] {
-    padding: 10px;
-}
+
 
 
 
@@ -483,9 +481,9 @@ h1[b-wa8yy699i7], h2[b-wa8yy699i7], h3[b-wa8yy699i7], h4[b-wa8yy699i7], h5[b-wa8
 
 
 [b-wa8yy699i7] button {
-    margin-top: 15px;
-    background-color: #C4FCEF; 
-    color: #5E3C9C;
+    margin-top: 25px;
+    background-color: #e63e0b;
+    color: #3A001E;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -497,11 +495,11 @@ h1[b-wa8yy699i7], h2[b-wa8yy699i7], h3[b-wa8yy699i7], h4[b-wa8yy699i7], h5[b-wa8
 
     [b-wa8yy699i7] button:hover {
         background-color: #FF8762;
-        color: #5E3C9C;
+        color: #3A001E;
     }
 
     [b-wa8yy699i7] button:active {
-        background-color: #003d82; 
+        background-color: #FFF7F3; 
         transform: translateY(2px); 
     }
 /* /Pages/Report.razor.rz.scp.css */
@@ -510,18 +508,18 @@ h1[b-wa8yy699i7], h2[b-wa8yy699i7], h3[b-wa8yy699i7], h4[b-wa8yy699i7], h5[b-wa8
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Adjust as needed */
+    height: 90vh;
+    overflow-y: auto;
     text-align: center;
     padding: 15px;
     font-family: "Sono", monospace;
 }
 
     .report-container div[b-wt4abr76l2] {
-        border: 1px solid black;
         border-radius: 5px;
         padding: 2rem;
-        background-color: #5E3C9C;
-        color: #ddf8f1;
+        background-color: #3A001E;
+        color: #FFF7F3;
     }
 
 h1[b-wt4abr76l2] {
@@ -530,8 +528,8 @@ h1[b-wt4abr76l2] {
     font-family: "Expletus Sans", sans-serif;
 }
 
-h1[b-wt4abr76l2], h2[b-wt4abr76l2], h3[b-wt4abr76l2], h4[b-wt4abr76l2], h5[b-wt4abr76l2] {
-    padding: 10px;
+h2[b-wt4abr76l2], h3[b-wt4abr76l2], h4[b-wt4abr76l2], h5[b-wt4abr76l2] {
+    padding: 5px;
 }
 
 h2[b-wt4abr76l2] {
@@ -546,8 +544,9 @@ h2[b-wt4abr76l2] {
 
 
 [b-wt4abr76l2] button {
-    background-color: #C4FCEF; 
-    color: #5E3C9C;
+    margin-top: 25px;
+    background-color: #e63e0b;
+    color: #3A001E;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -559,10 +558,10 @@ h2[b-wt4abr76l2] {
 
     [b-wt4abr76l2] button:hover {
         background-color: #FF8762;
-        color: #5E3C9C;
+        color: #3A001E;
     }
 
     [b-wt4abr76l2] button:active {
-        background-color: #003d82; 
+        background-color: #FFF7F3; 
         transform: translateY(2px); 
     }
