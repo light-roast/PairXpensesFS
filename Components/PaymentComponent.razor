@@ -13,7 +13,7 @@
 			<label for="paymentValue">Value:</label>
 			<InputNumber id="paymentValue" @bind-Value="paymentValidation.Value" />
 			<button type="submit">Update</button>
-			<Icon id="elementIcon" Color="IconColor.Danger" Name="IconName.DashCircleFill" Size="IconSize.x5" @onclick="HandleEditClick" style="color: black !important;"/>
+			<Icon id="elementIcon" Color="IconColor.Danger" Name="IconName.DashCircleFill" Size="IconSize.x5" @onclick="HandleEditClick" style="color: red !important;"/>
 		</EditForm>
 	}
 	else
@@ -21,7 +21,7 @@
 		@if (payment != null)
 		{
 
-			<h5><Icon Name="IconName.Trash" @onclick="DeletePayment" /> <Icon id="icon" Name="IconName.PencilSquare" @onclick="HandleEditClick" /> @payment.Name:</h5>
+			<h5><span><Icon Name="IconName.Trash" @onclick="DeletePayment" /> <Icon id="icon" Name="IconName.PencilSquare" @onclick="HandleEditClick" /></span> @payment.Name:</h5>
 			<p>@currency</p>
 			<p>@payment.CreateDate.ToString("dd/MM/yy")</p>
 		}

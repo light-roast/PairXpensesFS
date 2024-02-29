@@ -4,19 +4,20 @@
     flex: 1;
     padding: 20px;
     margin: 10px;
-    border: 1px solid #3F7875;
+    border: 1px solid #3A001E;
     border-radius: 5px;
-    color: #FF8762;
+    color: black;
     font-family: "Sono", monospace;
+    background-color: #FFF7F3;
 }
 
 [b-thzb36r6r1] #nombre {
-    background-color: #C4FCEF;
+    background-color: #FF8762;
     width: fit-content;
     margin: 0 auto;
     border-radius: 5px;
     padding: 5px;
-    color: #5E3C9C;
+    color: #3A001E; 
     margin-bottom: 7px;
     font-family: "Expletus Sans", sans-serif;
 }
@@ -32,7 +33,6 @@
 input[b-thzb36r6r1], select[b-thzb36r6r1] {
     margin-bottom: 20px;
     margin-top: 20px;
-    border:hidden;
     border-radius: 2px;
 }
 
@@ -58,7 +58,7 @@ h3[b-thzb36r6r1]{
     }
 
     .title h4[b-thzb36r6r1] {
-        border-bottom: 1px solid #3F7875;
+        border-bottom: 1px solid #3A001E;
         padding-right: 5px;
         padding-left: 5px;
     }
@@ -69,7 +69,7 @@ h3[b-thzb36r6r1]{
     align-items: center;
     gap: 5px; /* Adjust the gap as needed */
     justify-content: center;
-    border-bottom: 1px solid #3F7875;
+    border-bottom: 1px solid #3A001E;
 }
 
     .form-container > div[b-thzb36r6r1],

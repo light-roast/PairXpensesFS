@@ -4,9 +4,9 @@ article[b-3fho6sik8h] {
     justify-content: center !important;
     justify-items: center !important;
     align-items: center !important;
-    border-bottom: 1px solid #3F7875 !important;
+    border-bottom: 1px solid #3A001E !important;
     padding: 10px;
-    color: #ddf8f1;
+    color: black;
 }
 
     article > *[b-3fho6sik8h] {
@@ -20,8 +20,19 @@ article[b-3fho6sik8h] {
 }
 
 [b-3fho6sik8h] input {
-    border: hidden;
     border-radius: 2px;
+}
+
+h5[b-3fho6sik8h] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+span[b-3fho6sik8h] {
+    display: flex;
+    justify-content:space-between;
 }
 
 input[type=number][b-3fho6sik8h] {

@@ -15,14 +15,14 @@
 			<label for="debtValue">Value:</label>
 			<InputNumber id="debtValue" @bind-Value="debtValidation.Value" />
 			<button type="submit">Update</button>
-			<Icon Name="IconName.DashCircleFill" Size="IconSize.x5" @onclick="HandleEditClick" style="color: black !important;" />
+			<Icon Name="IconName.DashCircleFill" Size="IconSize.x5" @onclick="HandleEditClick" style="color: red !important;" />
 		</EditForm>
 	}
 	else
 	{
 		@if (debt != null)
 		{
-			<h5><Icon Name="IconName.Trash" @onclick="DeleteDebt" /> <Icon @onclick="HandleEditClick" id=" icon" Name="IconName.PencilSquare" /> @debt.Name:</h5>
+			<h5><span><Icon Name="IconName.Trash" @onclick="DeleteDebt" /> <Icon @onclick="HandleEditClick" id=" icon" Name="IconName.PencilSquare" /></span> @debt.Name:</h5>
 			<p>@currency</p>
 			<p>@debt.CreateDate.ToString("dd/MM/yy")</p>
 		}

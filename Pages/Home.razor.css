@@ -4,11 +4,11 @@ nav {
     justify-content: space-around;
     width: 100%;
     align-items: center;
-    background-color: #C4FCEF;
-    color: #845EC2;
+    background-color: #FF8762;
+    color: #3A001E;
     padding: 15px;
     margin: 0 auto;
-    border-bottom: 1px solid #5E3C9C;
+    border-bottom: 1px solid #3A001E;
 }
 
 nav h1 {
@@ -23,9 +23,9 @@ main {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    background-color: #5E3C9C;
+    background-color: #3A001E;
     width: 100%;
-    border-bottom: 1px solid #5E3C9C;
+    border-bottom: 1px solid #3A001E;
 }
 
 .order-1 {
@@ -60,7 +60,7 @@ section {
 
 button {
     background-color: #FF8762;
-    color: #5E3C9C;
+    color: #3A001E;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -72,12 +72,13 @@ button {
 }
 
     button:hover {
-        background-color: #C4FCEF; 
-        color: #5E3C9C;
+        background-color: #3A001E; 
+        color: #FF8762;
     }
 
     button:active {
-        background-color: #003d82; /* Even darker shade for active/click effect */
+        background-color: #FF8762;
+        color: #3A001E;
         transform: translateY(2px); /* Slight push down effect */
     }
 
@@ -96,7 +97,8 @@ button {
 }
 
     #no:hover {
-        background-color: #3F7875; /* Darker shade of red for hover effect */
+        background-color: #3A001E;
+        color:#FF8762; 
     }
 
     #no:active {
@@ -105,10 +107,11 @@ button {
     }
 
 .confirmation-dialog {
-    background-color: #845EC2;
+    background-color: white;
+    border: 1px solid #3A001E;
     padding: 5px;
     border-radius: 5px;
-    color: #FF8762;
+    color: #3A001E;
 }
 .confirmation-dialog p {
     padding: 5px;

@@ -4,9 +4,21 @@
     justify-content: center !important;
     justify-items: center !important;
     align-items: center !important;
-    border-bottom: 1px solid #3F7875 !important;
+    border-bottom: 1px solid #3A001E !important;
     padding: 10px;
-    color: #ddf8f1;
+    color: black;
+}
+
+h5 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+span {
+    display: flex;
+    justify-content:space-between;
 }
 
     article > * {
@@ -20,7 +32,6 @@
 }
 
 ::deep input {
-    border: hidden;
     border-radius: 2px;
 }
 
