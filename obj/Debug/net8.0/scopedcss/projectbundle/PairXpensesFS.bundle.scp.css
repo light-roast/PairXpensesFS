@@ -82,6 +82,28 @@ input:checked + .slider[b-kpxijb7gfo] {
     -ms-transform: translateX(20px); 
     transform: translateX(20px); 
   }
+
+@media screen and (max-width: 350px) {
+    section[b-kpxijb7gfo] {
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    .range[b-kpxijb7gfo] {
+        max-width: 35%;
+    }
+    
+}
+
+@media screen and (max-width: 430px) {
+    section[b-kpxijb7gfo] {
+        margin-right: 15px;
+    }
+
+    .range[b-kpxijb7gfo] {
+        max-width: 45%;
+    }
+}
 /* /Components/ColumnaUsuario.razor.rz.scp.css */
 
 
@@ -333,6 +355,7 @@ nav[b-2ewkxwj2la] {
     padding: 15px;
     margin: 0 auto;
     border-bottom: 1px solid #3A001E;
+    
 }
 
 nav h1[b-2ewkxwj2la] {
@@ -350,6 +373,7 @@ main[b-2ewkxwj2la] {
     background-color: #3A001E;
     width: 100%;
     border-bottom: 1px solid #3A001E;
+    
 }
 
 .order-1[b-2ewkxwj2la] {
@@ -443,6 +467,12 @@ button[b-2ewkxwj2la] {
     font-family: "Sono", monospace;
 }
 
+@media screen and (max-width: 390px) {
+    
+    h1[b-2ewkxwj2la] {
+        font-size: 14px;
+    }
+}
 /* /Pages/NoReport.razor.rz.scp.css */
 .report-container[b-wa8yy699i7] {
     display: flex;

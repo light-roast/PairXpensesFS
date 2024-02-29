@@ -9,6 +9,7 @@ nav {
     padding: 15px;
     margin: 0 auto;
     border-bottom: 1px solid #3A001E;
+    
 }
 
 nav h1 {
@@ -26,6 +27,7 @@ main {
     background-color: #3A001E;
     width: 100%;
     border-bottom: 1px solid #3A001E;
+    
 }
 
 .order-1 {
@@ -119,3 +121,9 @@ button {
     font-family: "Sono", monospace;
 }
 
+@media screen and (max-width: 390px) {
+    
+    h1 {
+        font-size: 14px;
+    }
+}

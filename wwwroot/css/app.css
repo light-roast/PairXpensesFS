@@ -2,6 +2,10 @@ html, * {
     margin: 0;
     padding: 0;
 }
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
 
 .valid.modified:not([type=checkbox]) {
     outline: 1px solid #26b050;
@@ -90,5 +94,8 @@ code {
 body {
     background-color: var(--main-color);
     overflow-x: hidden; 
+    width: 100%;
+}
+#app {
     width: 100%;
 }

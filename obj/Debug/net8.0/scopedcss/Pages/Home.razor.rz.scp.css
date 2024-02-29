@@ -9,6 +9,7 @@ nav[b-2ewkxwj2la] {
     padding: 15px;
     margin: 0 auto;
     border-bottom: 1px solid #3A001E;
+    
 }
 
 nav h1[b-2ewkxwj2la] {
@@ -26,6 +27,7 @@ main[b-2ewkxwj2la] {
     background-color: #3A001E;
     width: 100%;
     border-bottom: 1px solid #3A001E;
+    
 }
 
 .order-1[b-2ewkxwj2la] {
@@ -119,3 +121,9 @@ button[b-2ewkxwj2la] {
     font-family: "Sono", monospace;
 }
 
+@media screen and (max-width: 390px) {
+    
+    h1[b-2ewkxwj2la] {
+        font-size: 14px;
+    }
+}
