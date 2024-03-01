@@ -30,10 +30,16 @@
     
 }
 
-input, select {
+input, select, button {
     margin-bottom: 20px;
     margin-top: 20px;
-    border-radius: 2px;
+    border-radius: 5px;
+    font-family: "Sono", monospace;
+}
+
+button {
+    background-color: #3A001E;
+    color: #FF8762;
 }
 
 h3{

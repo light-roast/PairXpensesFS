@@ -30,10 +30,16 @@
     
 }
 
-input[b-thzb36r6r1], select[b-thzb36r6r1] {
+input[b-thzb36r6r1], select[b-thzb36r6r1], button[b-thzb36r6r1] {
     margin-bottom: 20px;
     margin-top: 20px;
-    border-radius: 2px;
+    border-radius: 5px;
+    font-family: "Sono", monospace;
+}
+
+button[b-thzb36r6r1] {
+    background-color: #3A001E;
+    color: #FF8762;
 }
 
 h3[b-thzb36r6r1]{

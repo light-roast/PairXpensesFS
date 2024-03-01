@@ -19,8 +19,13 @@ article[b-3fho6sik8h] {
     margin: 0 !important;
 }
 
-[b-3fho6sik8h] input {
-    border-radius: 2px;
+[b-3fho6sik8h] input, button[b-3fho6sik8h] {
+    border-radius: 5px;
+    font-family: "Sono", monospace;
+}
+[b-3fho6sik8h] button {
+    background-color: #3A001E;
+    color: #FF8762;
 }
 
 h5[b-3fho6sik8h] {

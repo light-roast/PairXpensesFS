@@ -31,8 +31,14 @@ span[b-r8q39ujmbo] {
     margin: 0 !important;
 }
 
-[b-r8q39ujmbo] input {
-    border-radius: 2px;
+[b-r8q39ujmbo] input, button[b-r8q39ujmbo] {
+    border-radius: 5px;
+    font-family: "Sono", monospace;
+}
+
+[b-r8q39ujmbo] button {
+    background-color: #3A001E;
+    color: #FF8762;
 }
 
 input[type=number][b-r8q39ujmbo] {

@@ -19,8 +19,13 @@
     margin: 0 !important;
 }
 
-::deep input {
-    border-radius: 2px;
+::deep input, button {
+    border-radius: 5px;
+    font-family: "Sono", monospace;
+}
+::deep button {
+    background-color: #3A001E;
+    color: #FF8762;
 }
 
 h5 {
