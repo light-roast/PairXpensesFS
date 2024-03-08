@@ -2,16 +2,21 @@
 using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text;
+using Microsoft.JSInterop;
+using System.Net.Http.Headers;
+
 
 namespace PairXpensesFS.Services
 {
     public class PaymentService
     {
         private readonly HttpClient _httpClient;
+        private readonly IJSRuntime _jsRuntime;
 
-        public PaymentService(HttpClient httpClient)
+        public PaymentService(HttpClient httpClient, IJSRuntime jsRuntime)
         {
             _httpClient = httpClient;
+            _jsRuntime = jsRuntime;
         }
 
         public async Task<List<PaymentReq>> GetPaymentsByUserAsync(int id)
@@ -125,6 +130,18 @@ namespace PairXpensesFS.Services
 
         public async Task<string> DeleteAllPaymentsAsync()
         {
+        // Get token from local storage
+            var token = await _jsRuntime.InvokeAsync<string>("localStorage.getItem", "token");
+
+            // Check if token is present
+            if (string.IsNullOrWhiteSpace(token))
+            {
+                throw new InvalidOperationException("Token not found in local storage.");
+            }
+
+            // Add token to authorization header
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
             HttpResponseMessage response = await _httpClient.DeleteAsync("api/Payment/deleteall");
 
             if (response.IsSuccessStatusCode)
