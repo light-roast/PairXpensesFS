@@ -16,15 +16,15 @@ builder.Services.AddScoped<DebtService>();
 builder.Services.AddScoped<PaymentService>();
 builder.Services.AddHttpClient<UserService>(client =>
 {
-    client.BaseAddress = new("http://localhost:5002");
+    client.BaseAddress = new("https://pairxpenses.azurewebsites.net/");
 });
 builder.Services.AddHttpClient<DebtService>(client =>
 {
-    client.BaseAddress = new("http://localhost:5002");
+    client.BaseAddress = new("https://pairxpenses.azurewebsites.net/");
 });
 builder.Services.AddHttpClient<PaymentService>(client =>
 {
-    client.BaseAddress = new("http://localhost:5002");
+    client.BaseAddress = new("https://pairxpenses.azurewebsites.net/");
 });
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddHttpClient();

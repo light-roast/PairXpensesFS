@@ -1,0 +1,51 @@
+name: Compilar e implementar la aplicación de .NET Core en la aplicación web PairXpensesFront
+on:
+  pull_request:
+    types:
+    - opened
+    - synchronize
+    - reopened
+    - closed
+    branches:
+    - main
+  push:
+    branches:
+    - main
+env:
+  AZURE_STATIC_WEBAPP_NAME: PairXpensesFront
+  APP_DIRECTORY: PairXpensesFS
+  API_DIRECTORY: ''
+  OUTPUT: wwwroot
+  DEPLOYMENT_ENVIRONMENT: preview
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    name: Build and Deploy Job
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: true
+    - id: builddeploy
+      name: Build And Deploy
+      uses: Azure/static-web-apps-deploy@v1
+      with:
+        azure_static_web_apps_api_token: ${{ secrets.PairXpensesFront_SPN }}
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        action: upload
+        deployment_environment: ${{env.DEPLOYMENT_ENVIRONMENT}}
+        app_location: ${{ env.APP_DIRECTORY }}
+        api_location: ${{ env.API_DIRECTORY }}
+        output_location: ${{ env.OUTPUT }}
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    name: Close Pull Request Job
+    runs-on: ubuntu-latest
+    steps:
+    - id: closepullrequest
+      name: Close Pull Request
+      uses: Azure/static-web-apps-deploy@v1
+      with:
+        azure_static_web_apps_api_token: ${{ secrets.PairXpensesFront_SPN }}
+        action: close
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
