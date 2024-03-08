@@ -102,16 +102,15 @@
 
     private async Task HandleLogin()
     {
-        Console.WriteLine("hola");
-        // // loginFailed = !await UserService.Login(username, password);
+        loginFailed = !await UserService.Login(username, password);
 
-        // // if (loginFailed)
-        // // {
-        // //     NavigationManager.NavigateTo("/FailLogin");
-        // // }
-        // // else
-        // // {
-        // //     NavigationManager.NavigateTo("/home");
-        // // }
+        if (loginFailed)
+        {
+            NavigationManager.NavigateTo("/FailLogin");
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/home");
+        }
     }
 }
