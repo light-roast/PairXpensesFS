@@ -1,8 +1,7 @@
 ﻿@page "/report"
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JSRuntime
-@if (isAuthorized)
-{
+
     <div class="report-container">
         <div>
         <h1>PairXpenses Report</h1>
@@ -16,11 +15,7 @@
         </div>
     </div>
 }
-else
-{
-    <NoAuthorized>
-    </NoAuthorized>
-}
+
 
 @code {
     private bool isAuthorized;
@@ -42,14 +37,10 @@ else
     [Parameter]
     public string? finalReport { get; set; }
 
-    private async Task IsAuthorized()
-        {
-            var token = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "token");
-            isAuthorized = !string.IsNullOrEmpty(token);
-        }
+    
     protected override void OnInitialized()
     {
-        this.IsAuthorized();
+
         // Extract report data from query parameters
         var uri = new Uri(NavigationManager.Uri);
         var queryString = uri.Query;
