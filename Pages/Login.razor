@@ -1,0 +1,117 @@
+﻿@page "/"
+@using PairXpensesFS.Services
+@inject NavigationManager NavigationManager
+@inject UserService UserService
+<main>
+    <div class="container">
+        <h1>PairXpenses</h1>
+        <h3>Login</h3>
+        <form>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input id="username" @bind="username" class="form-control" placeholder="Enter username" type="text" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input id="password" @bind="password" class="form-control" placeholder="Enter password" type="password" />
+            </div>
+            <button type="button" class="btn btn-primary" @onclick="HandleLogin">Login</button>
+        </form>
+    </div>
+</main>
+
+<style>
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .container {
+        border-radius: 10px;
+        display: flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        font-family: "Expletus Sans", sans-serif;
+        background-color: #3A001E;
+        color: #FF8762;
+        max-width: 350px;
+        min-width: 270px;
+        margin: 20px;
+        padding: 15px;
+    }
+
+    h1, h3 {
+        margin-top: 25px;
+        text-align: center;
+        display:block;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .label {
+        color: #FF8762;
+        text-align: left;
+    }
+
+    .form-control {
+        
+        border: 2px solid #FF8762;
+        border-radius: 5px;
+        padding: 10px;
+        max-width: 300px;
+        min-width: 240px;
+        font-family: "Sono", monospace;
+        color: #FF8762;
+        background-color: #3A001E;
+    }
+
+    .btn-primary {
+        margin-bottom: 25px;
+        border-radius: 5px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #FF8762;
+        border-color: #FF8762;
+        color: #3A001E;
+        font-family: "Expletus Sans", sans-serif;
+        font-weight: bold;
+        padding: 10px 20px; /* Adjust padding as needed */
+        margin-top: 20px; /* Add margin to separate button from other elements */
+    }
+
+        .btn-primary:hover {
+            background-color: #E65A32;
+            border-color: #E65A32;
+            color: #3A001E;
+        }
+
+</style>
+
+@code {
+    private string? username;
+    private string? password;
+    private bool loginFailed;
+
+    private async Task HandleLogin()
+    {
+        Console.WriteLine("hola");
+        // // loginFailed = !await UserService.Login(username, password);
+
+        // // if (loginFailed)
+        // // {
+        // //     NavigationManager.NavigateTo("/FailLogin");
+        // // }
+        // // else
+        // // {
+        // //     NavigationManager.NavigateTo("/home");
+        // // }
+    }
+}
