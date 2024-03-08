@@ -1,20 +1,29 @@
 ﻿@page "/report"
 @inject NavigationManager NavigationManager
-
-<div class="report-container">
-    <div>
-    <h1>PairXpenses Report</h1>
-    <h3>@report1</h3>
-    <h4>@report2</h4>
-    <h4>@report3</h4>
-    <h4>@report4</h4>
-    <h4>@report5</h4>
-    <h2>@finalReport</h2>
-        <Button @onclick="ReturnToHomePage" Color="ButtonColor.Primary"><Icon Name="IconName.ArrowLeftCircleFill" /> Home </Button>
+@inject IJSRuntime JSRuntime
+@if (isAuthorized)
+{
+    <div class="report-container">
+        <div>
+        <h1>PairXpenses Report</h1>
+        <h3>@report1</h3>
+        <h4>@report2</h4>
+        <h4>@report3</h4>
+        <h4>@report4</h4>
+        <h4>@report5</h4>
+        <h2>@finalReport</h2>
+            <Button @onclick="ReturnToHomePage" Color="ButtonColor.Primary"><Icon Name="IconName.ArrowLeftCircleFill" /> Home </Button>
+        </div>
     </div>
-</div>
+}
+else
+{
+    <NoAuthorized>
+    </NoAuthorized>
+}
 
 @code {
+    private bool isAuthorized;
     [Parameter]
     public string? report1 { get; set; }
 
@@ -33,8 +42,14 @@
     [Parameter]
     public string? finalReport { get; set; }
 
+    private async Task IsAuthorized()
+        {
+            var token = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "token");
+            isAuthorized = !string.IsNullOrEmpty(token);
+        }
     protected override void OnInitialized()
     {
+        this.IsAuthorized();
         // Extract report data from query parameters
         var uri = new Uri(NavigationManager.Uri);
         var queryString = uri.Query;
@@ -81,7 +96,7 @@
 
     private void ReturnToHomePage()
     {
-        NavigationManager.NavigateTo("/");
+        NavigationManager.NavigateTo("/home");
     }
 }
 

@@ -5,10 +5,13 @@
 @inject Services.DebtService DebtService
 @inject Services.PaymentService PaymentService
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 @using System.Globalization
 
 <PageTitle>PairXpenses</PageTitle>
-<nav>
+@if (isAuthorized)
+{
+    <nav>
     <h1>PairXpenses</h1>
     <ChargeControl UserA="@UserA" UserB="@UserB" 
         PercentageA="@percentageA" 
@@ -16,44 +19,53 @@
         IsOrderReversed="@IsOrderReversed" 
         IsOrderReversedChanged="HandleToggle" 
      />
-</nav>
+    </nav>
 
-<main>
-    <div class="@(IsOrderReversed ? "order-2" : "order-1")">
-        <ColumnaUsuario User="@UserA"
-            CambiarUser="@CambiarUser"
-            RefreshContent="@refreshChildContent" />
-    </div>
-    <div class="@(IsOrderReversed ? "order-1" : "order-2")">
-        <ColumnaUsuario User="@UserB"                        
-            CambiarUser="@CambiarUser"
-            RefreshContent="@refreshChildContent" />
-    </div>
-</main>
-<section>
-    <button @onclick="GenerateReport">Generate report</button>
-    <div>
-        @if (isConfirmationVisible)
-        {
-            <div class="confirmation-dialog">
-                <p>Are you sure you want to start a new month and reset debts and payments?</p>
-                <button @onclick="ConfirmDelete">Yes</button>
-                <button id="no" @onclick="CancelDelete">No</button>
-            </div>
-        }
-        else
-        {
-            <button @onclick="DeleteAllItems">Reset debts and payments</button>
-        }
-    </div>
+    <main>
+        <div class="@(IsOrderReversed ? "order-2" : "order-1")">
+            <ColumnaUsuario User="@UserA"
+                CambiarUser="@CambiarUser"
+                RefreshContent="@refreshChildContent" />
+        </div>
+        <div class="@(IsOrderReversed ? "order-1" : "order-2")">
+            <ColumnaUsuario User="@UserB"                        
+                CambiarUser="@CambiarUser"
+                RefreshContent="@refreshChildContent" />
+        </div>
+    </main>
+    <section>
+        <button @onclick="GenerateReport">Generate report</button>
+        <div>
+            @if (isConfirmationVisible)
+            {
+                <div class="confirmation-dialog">
+                    <p>Are you sure you want to start a new month and reset debts and payments?</p>
+                    <button @onclick="ConfirmDelete">Yes</button>
+                    <button id="no" @onclick="CancelDelete">No</button>
+                </div>
+            }
+            else
+            {
+                <button @onclick="DeleteAllItems">Reset debts and payments</button>
+            }
+        </div>
+        
+    </section>
+}
+else
+{
     
-</section>
+    <NoAuthorized>
+    </NoAuthorized>
+    
+}
+
 
 
 
 @code {
     private List<UserReq>? users;
-
+    private bool isAuthorized;
     private bool IsOrderReversed { get; set; } = false;
     private long APayments { get; set; }
     private long ADebts { get; set; }
@@ -70,15 +82,25 @@
     private UserReq UserA { get; set; } = new UserReq { Id = 1, Name = "User A" };
     private UserReq UserB { get; set; } = new UserReq { Id = 2, Name = "User B" };
 
+    
+
     private void HandleToggle(bool newValue)
     {
         IsOrderReversed = newValue;
     }
 
+    private async Task IsAuthorized()
+        {
+            var token = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "token");
+            isAuthorized = !string.IsNullOrEmpty(token);
+        }
+
 
 
     protected override async Task OnInitializedAsync()
     {
+        this.IsAuthorized();
+        
         percentageA = 50;
 
         users = await UserService.GetUsersAsync();
