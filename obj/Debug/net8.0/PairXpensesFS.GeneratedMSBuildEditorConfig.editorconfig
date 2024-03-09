@@ -30,20 +30,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xOb0F1dGhvcml6ZWQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/PairXpensesFS/Layout/LoginDisplay.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XExvZ2luRGlzcGxheS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/Projects/PairXpensesFS/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Projects/PairXpensesFS/Layout/RedirectToLogin.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XFJlZGlyZWN0VG9Mb2dpbi5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Projects/PairXpensesFS/Pages/Authentication.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projects/PairXpensesFS/Pages/Login.razor]
