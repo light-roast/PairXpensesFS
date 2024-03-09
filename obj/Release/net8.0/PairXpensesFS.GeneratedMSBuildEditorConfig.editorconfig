@@ -26,24 +26,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/PairXpensesFS/Components/ColumnaUsuario.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb2x1bW5hVXN1YXJpby5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Projects/PairXpensesFS/Layout/LoginDisplay.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XExvZ2luRGlzcGxheS5yYXpvcg==
+[D:/Projects/PairXpensesFS/Components/NoAuthorized.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xOb0F1dGhvcml6ZWQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projects/PairXpensesFS/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/PairXpensesFS/Layout/RedirectToLogin.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XFJlZGlyZWN0VG9Mb2dpbi5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Projects/PairXpensesFS/Pages/Authentication.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb24ucmF6b3I=
+[D:/Projects/PairXpensesFS/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projects/PairXpensesFS/_Imports.razor]
@@ -54,6 +46,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDaGFyZ2VDb250cm9sLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-kpxijb7gfo
 
+[D:/Projects/PairXpensesFS/Components/ColumnaUsuario.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb2x1bW5hVXN1YXJpby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-thzb36r6r1
+
+[D:/Projects/PairXpensesFS/Components/DebtComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZWJ0Q29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-3fho6sik8h
+
+[D:/Projects/PairXpensesFS/Components/PaymentComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYXltZW50Q29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-r8q39ujmbo
+
 [D:/Projects/PairXpensesFS/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-2ewkxwj2la
+
+[D:/Projects/PairXpensesFS/Pages/NoReport.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm9SZXBvcnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-wa8yy699i7
+
+[D:/Projects/PairXpensesFS/Pages/Report.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-wt4abr76l2

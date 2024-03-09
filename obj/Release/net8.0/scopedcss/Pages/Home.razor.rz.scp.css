@@ -1,0 +1,129 @@
+
+nav[b-2ewkxwj2la] {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    background-color: #FF8762;
+    color: #3A001E;
+    padding: 15px;
+    margin: 0 auto;
+    border-bottom: 1px solid #3A001E;
+    
+}
+
+nav h1[b-2ewkxwj2la] {
+    font-family: "Expletus Sans", sans-serif;
+}
+
+
+
+main[b-2ewkxwj2la] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #3A001E;
+    width: 100%;
+    border-bottom: 1px solid #3A001E;
+    
+}
+
+.order-1[b-2ewkxwj2la] {
+    order: 1;
+    display: flex;
+    width: 45%;
+    min-width: 345px;
+}
+
+.order-2[b-2ewkxwj2la] {
+    order: 2;
+    display: flex;
+    width: 45%;
+    min-width: 345px;
+}
+
+section[b-2ewkxwj2la] {
+    margin: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+    section div[b-2ewkxwj2la] {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 250px;
+    }
+
+button[b-2ewkxwj2la] {
+    background-color: #FF8762;
+    color: #3A001E;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+    font-family: "Expletus Sans", sans-serif;
+}
+
+    button:hover[b-2ewkxwj2la] {
+        background-color: #3A001E; 
+        color: #FF8762;
+    }
+
+    button:active[b-2ewkxwj2la] {
+        background-color: #FF8762;
+        color: #3A001E;
+        transform: translateY(2px); /* Slight push down effect */
+    }
+
+
+#no[b-2ewkxwj2la] {
+    background-color: red; /* Red base color */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+    font-family: "Expletus Sans", sans-serif;
+}
+
+    #no:hover[b-2ewkxwj2la] {
+        background-color: #3A001E;
+        color:#FF8762; 
+    }
+
+    #no:active[b-2ewkxwj2la] {
+        background-color: #990000; /* Even darker shade of red for active/click effect */
+        transform: translateY(2px); /* Slight push down effect */
+    }
+
+.confirmation-dialog[b-2ewkxwj2la] {
+    background-color: white;
+    border: 1px solid #3A001E;
+    padding: 5px;
+    border-radius: 5px;
+    color: #3A001E;
+}
+.confirmation-dialog p[b-2ewkxwj2la] {
+    padding: 5px;
+    text-align: center;
+    font-family: "Sono", monospace;
+}
+
+@media screen and (max-width: 390px) {
+    
+    h1[b-2ewkxwj2la] {
+        font-size: 14px;
+    }
+}

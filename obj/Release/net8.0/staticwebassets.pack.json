@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Projects\\PairXpensesFS\\bin\\Release\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "D:\\Projects\\PairXpensesFS\\obj\\Release\\net8.0\\compressed\\pzxru9vl0w.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "D:\\Projects\\PairXpensesFS\\obj\\Release\\net8.0\\scopedcss\\bundle\\PairXpensesFS.styles.css",
+      "PackagePath": "staticwebassets\\PairXpensesFS.styles.css"
+    },
+    {
+      "Id": "D:\\Projects\\PairXpensesFS\\wwwroot\\appsettings.Development.json",
+      "PackagePath": "staticwebassets\\appsettings.Development.json"
+    },
+    {
+      "Id": "D:\\Projects\\PairXpensesFS\\wwwroot\\appsettings.json",
+      "PackagePath": "staticwebassets\\appsettings.json"
+    },
+    {
+      "Id": "D:\\Projects\\PairXpensesFS\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "D:\\Projects\\PairXpensesFS\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Projects\\PairXpensesFS\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "D:\\Projects\\PairXpensesFS\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.PairXpensesFS.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.PairXpensesFS.props",
+      "PackagePath": "build\\PairXpensesFS.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.PairXpensesFS.props",
+      "PackagePath": "buildMultiTargeting\\PairXpensesFS.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.PairXpensesFS.props",
+      "PackagePath": "buildTransitive\\PairXpensesFS.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

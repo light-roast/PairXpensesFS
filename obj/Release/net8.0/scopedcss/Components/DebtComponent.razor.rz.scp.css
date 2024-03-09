@@ -1,0 +1,67 @@
+article[b-3fho6sik8h] {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    justify-content: center !important;
+    justify-items: center !important;
+    align-items: center !important;
+    border-bottom: 1px solid #3A001E !important;
+    padding: 10px;
+    color: black;
+}
+
+    article > *[b-3fho6sik8h] {
+        justify-self: center !important;
+    }
+
+[b-3fho6sik8h] input::-webkit-inner-spin-button,
+[b-3fho6sik8h] input::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+
+[b-3fho6sik8h] input, button[b-3fho6sik8h] {
+    border-radius: 5px;
+    font-family: "Sono", monospace;
+}
+[b-3fho6sik8h] button {
+    background-color: #3A001E;
+    color: #FF8762;
+}
+
+h5[b-3fho6sik8h] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+span[b-3fho6sik8h] {
+    display: flex;
+    justify-content:space-between;
+}
+
+input[type=number][b-3fho6sik8h] {
+    -moz-appearance: textfield !important;
+}
+
+i:hover[b-3fho6sik8h] {
+    cursor: pointer !important;
+}
+
+[b-3fho6sik8h] i:hover {
+    cursor: pointer !important;
+}
+
+[b-3fho6sik8h] #debt-edit-form {
+    display: inline-flex !important; /* or inline-block */
+    flex-wrap: nowrap !important; /* Ensures items stay in a single row */
+    align-items: center !important; /* Align items vertically */
+    grid-column: 1 / 4 !important;
+}
+
+[b-3fho6sik8h] input,
+[b-3fho6sik8h] input,
+[b-3fho6sik8h] file-selector-button {
+    flex-shrink: 1 !important;
+    max-width: 70px !important;
+}

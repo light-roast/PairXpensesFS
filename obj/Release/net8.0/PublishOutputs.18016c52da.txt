@@ -1,0 +1,1 @@
+D:\Projects\PairXpensesFS\obj\Release\net8.0\browser-wasm\PubTmp\Out\web.config
