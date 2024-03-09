@@ -6,7 +6,7 @@
     <div class="container">
         <h1>PairXpenses</h1>
         <h3>Login</h3>
-        <form>
+        <form @onsubmit="HandleLogin">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input id="username" @bind="username" class="form-control" placeholder="Enter username" type="text" />
@@ -15,7 +15,7 @@
                 <label for="password">Password:</label>
                 <input id="password" @bind="password" class="form-control" placeholder="Enter password" type="password" />
             </div>
-            <button type="submit class="btnprimary" @onclick="HandleLogin">Login</button>
+            <button type="submit">Login</button>
         </form>
     </div>
 </main>
@@ -72,7 +72,7 @@
         background-color: #3A001E;
     }
 
-    .btnprimary {
+    button {
         margin-bottom: 25px;
         border-radius: 5px;
         display: block;
@@ -87,7 +87,7 @@
         margin-top: 20px; /* Add margin to separate button from other elements */
     }
 
-        .btnprimary:hover {
+        button:hover {
             background-color: #E65A32;
             border-color: #E65A32;
             color: #3A001E;
@@ -100,7 +100,7 @@
     private string? password;
     private bool loginFailed;
 
-    private async Task HandleLogin()
+    private async Task HandleLogin(EventArgs e)
     {
         loginFailed = !await UserService.Login(username, password);
 

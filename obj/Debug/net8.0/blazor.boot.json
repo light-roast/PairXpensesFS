@@ -1,15 +1,15 @@
 {
   "mainAssemblyName": "PairXpensesFS",
   "resources": {
-    "hash": "sha256-1zB54vayvKLmVDm88+ERcXXEWSi3pRpt4yDW4Ct6tbk=",
+    "hash": "sha256-6I5j7zC0ObuzbYYK/ZqOzZ+KXa+3yh8F3VExwiKP2WA=",
     "jsModuleNative": {
-      "dotnet.native.8.0.1.3575p5c4nx.js": "sha256-SGOlISx+3G4kkvpC9Uq3qoPGsnjxGmW61QBev0lyI5U="
+      "dotnet.native.8.0.2.deknxu92gu.js": "sha256-gPMK16QWoJSTxorlZJqcVtbBRTniIQWlLsJN2O4cJHg="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.8.0.1.kws8wqklr6.js": "sha256-HZOoaGpz9ekMa/oSmeApSKp3DXNdVUq2UBqsTIIiN8A="
+      "dotnet.runtime.8.0.2.8j60y5zbay.js": "sha256-54KSaoOArNfygQbV+r4B5y3ys53v2tnvFIyZcZiUmi0="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-dqpunZywlYy86b4O6ZjONasmG+4FH0P17FZ0OIf/lIg="
+      "dotnet.native.wasm": "sha256-C2P+OTYZAJlmqo6rc4heqwvIVVsXIF8MAxC6WRe96Eg="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -237,10 +237,10 @@
       "mscorlib.wasm": "sha256-EpWTfh4m/hEcXRFYMCR9YeYHwdUJgcm1laBaxWfq2S4=",
       "netstandard.wasm": "sha256-2kH24/YfHmU3B4eYRyRmiwebYROM4+B9eDWKvMnUdP8=",
       "System.Private.CoreLib.wasm": "sha256-CsySKiP7HYY1pS8LTDE60EkqiX5oHb3WoEZHDNd1yK0=",
-      "PairXpensesFS.wasm": "sha256-Ht2PI6k4BbKla/0FAdgmBPp6nBkMcMmSkBN2J4boT/8="
+      "PairXpensesFS.wasm": "sha256-MoXOv5l7Jmfz5xbf0Ys9pRbW5myDeeXUvKXQC8oJhlM="
     },
     "pdb": {
-      "PairXpensesFS.pdb": "sha256-qOobJ161AJP+nHXEKfwRQROa7VuPytehsW8mB8/byes="
+      "PairXpensesFS.pdb": "sha256-ol+LQBThm4AHL8gHxKzekg4w3HmlTe+1+yfDiHfKDSo="
     }
   },
   "cacheBootResources": true,

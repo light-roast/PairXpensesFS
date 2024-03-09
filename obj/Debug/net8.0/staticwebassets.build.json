@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cQ/kmD6Cngmc3aMkE3/Q7y02fQWmjhih1u/xyGfrICQ=",
+  "Hash": "CEoH9gw6NT5nZ01uwCYCkKti4w3QOeicH4s/Rpb2xiA=",
   "Source": "PairXpensesFS",
   "BasePath": "/",
   "Mode": "Root",
@@ -318,7 +318,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\dotnet.js"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.js"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
@@ -337,15 +337,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\dotnet.js.map"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.js.map"
     },
     {
-      "Identity": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.1.3575p5c4nx.js",
+      "Identity": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.2.deknxu92gu.js",
       "SourceId": "PairXpensesFS",
       "SourceType": "Computed",
       "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.8.0.1.3575p5c4nx.js",
+      "RelativePath": "_framework/dotnet.native.8.0.2.deknxu92gu.js",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -356,7 +356,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\dotnet.native.js"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.native.js"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
@@ -375,15 +375,15 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\dotnet.native.wasm"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.native.wasm"
     },
     {
-      "Identity": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.1.kws8wqklr6.js",
+      "Identity": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.2.8j60y5zbay.js",
       "SourceId": "PairXpensesFS",
       "SourceType": "Computed",
       "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.8.0.1.kws8wqklr6.js",
+      "RelativePath": "_framework/dotnet.runtime.8.0.2.8j60y5zbay.js",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -394,7 +394,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\dotnet.runtime.js"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.runtime.js"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
@@ -413,7 +413,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\dotnet.runtime.js.map"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.runtime.js.map"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
@@ -432,7 +432,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\icudt_CJK.dat"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\icudt_CJK.dat"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
@@ -451,7 +451,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\icudt_EFIGS.dat"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\icudt_EFIGS.dat"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
@@ -470,7 +470,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
+      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Jenin.FontAwesome.Blazor.wasm",
@@ -5147,25 +5147,6 @@
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.JSInterop.wasm"
     },
     {
-      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\3575p5c4nx.gz",
-      "SourceId": "PairXpensesFS",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.8.0.1.3575p5c4nx.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.1.3575p5c4nx.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.1.3575p5c4nx.js"
-    },
-    {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\36igtgkqku.gz",
       "SourceId": "PairXpensesFS",
       "SourceType": "Computed",
@@ -5451,25 +5432,6 @@
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Security.SecureString.wasm"
     },
     {
-      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\55bbvozpkq.gz",
-      "SourceId": "PairXpensesFS",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_CJK.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat"
-    },
-    {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\5e79x85igp.gz",
       "SourceId": "PairXpensesFS",
       "SourceType": "Computed",
@@ -5527,6 +5489,25 @@
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Net.WebClient.wasm"
     },
     {
+      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\5ux8ql4ho3.gz",
+      "SourceId": "PairXpensesFS",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_EFIGS.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat"
+    },
+    {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\65iqmjrcwm.gz",
       "SourceId": "PairXpensesFS",
       "SourceType": "Computed",
@@ -5582,25 +5563,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Reflection.Emit.wasm"
-    },
-    {
-      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\6vrgaazbl7.gz",
-      "SourceId": "PairXpensesFS",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_EFIGS.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\712r7vd79f.gz",
@@ -5677,25 +5639,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.ServiceProcess.wasm"
-    },
-    {
-      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\7i0h9yvu95.gz",
-      "SourceId": "PairXpensesFS",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.wasm.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\7j31ykkig5.gz",
@@ -5810,6 +5753,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Extensions.Configuration.Abstractions.wasm"
+    },
+    {
+      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\8j60y5zbay.gz",
+      "SourceId": "PairXpensesFS",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.runtime.8.0.2.8j60y5zbay.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.2.8j60y5zbay.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.2.8j60y5zbay.js"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\8m4ujy64r2.gz",
@@ -6439,6 +6401,25 @@
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Text.RegularExpressions.wasm"
     },
     {
+      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\deknxu92gu.gz",
+      "SourceId": "PairXpensesFS",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.native.8.0.2.deknxu92gu.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.2.deknxu92gu.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.2.deknxu92gu.js"
+    },
+    {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\diklvhc7ls.gz",
       "SourceId": "PairXpensesFS",
       "SourceType": "Computed",
@@ -6513,6 +6494,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Runtime.Intrinsics.wasm"
+    },
+    {
+      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\el7hyfth7u.gz",
+      "SourceId": "PairXpensesFS",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.native.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\f8845dzoj7.gz",
@@ -6667,25 +6667,6 @@
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Collections.NonGeneric.wasm"
     },
     {
-      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\g5nuy2ql73.gz",
-      "SourceId": "PairXpensesFS",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.js.map.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map"
-    },
-    {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\g5pu1ybmpd.gz",
       "SourceId": "PairXpensesFS",
       "SourceType": "Computed",
@@ -6722,25 +6703,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Security.Cryptography.wasm"
-    },
-    {
-      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\g7nwqsqh6d.gz",
-      "SourceId": "PairXpensesFS",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_no_CJK.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\g7z60bfu4u.gz",
@@ -7085,6 +7047,25 @@
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Net.Http.Headers.wasm"
     },
     {
+      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\jstsbkxywd.gz",
+      "SourceId": "PairXpensesFS",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_CJK.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat"
+    },
+    {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\jszvn3r194.gz",
       "SourceId": "PairXpensesFS",
       "SourceType": "Computed",
@@ -7199,23 +7180,23 @@
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Runtime.wasm"
     },
     {
-      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\kws8wqklr6.gz",
+      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\kqtmz2s8bb.gz",
       "SourceId": "PairXpensesFS",
       "SourceType": "Computed",
       "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.8.0.1.kws8wqklr6.js.gz",
+      "RelativePath": "_framework/dotnet.runtime.js.map.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.1.kws8wqklr6.js",
+      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.1.kws8wqklr6.js"
+      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\l164zne17e.gz",
@@ -7332,6 +7313,25 @@
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Mvc.Abstractions.wasm"
     },
     {
+      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\m8r7f6o2w4.gz",
+      "SourceId": "PairXpensesFS",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js"
+    },
+    {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\mdn3x8ezkr.gz",
       "SourceId": "PairXpensesFS",
       "SourceType": "Computed",
@@ -7368,6 +7368,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.AppContext.wasm"
+    },
+    {
+      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\mkalzfz05e.gz",
+      "SourceId": "PairXpensesFS",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.js.map.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\mqitiz43bi.gz",
@@ -7959,25 +7978,6 @@
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Routing.wasm"
     },
     {
-      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\plro7jqv32.gz",
-      "SourceId": "PairXpensesFS",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.js.map.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map"
-    },
-    {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\ppdpq7yy6y.gz",
       "SourceId": "PairXpensesFS",
       "SourceType": "Computed",
@@ -8109,6 +8109,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Private.Xml.wasm"
+    },
+    {
+      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\ra7i2zljza.gz",
+      "SourceId": "PairXpensesFS",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_no_CJK.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\rjljlfzpe5.gz",
@@ -8565,25 +8584,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Win32.Primitives.wasm"
-    },
-    {
-      "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\v4y5acv5kd.gz",
-      "SourceId": "PairXpensesFS",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Projects\\PairXpensesFS\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js"
     },
     {
       "Identity": "D:\\Projects\\PairXpensesFS\\obj\\Debug\\net8.0\\compressed\\v63lc5ldo0.gz",
