@@ -82,7 +82,7 @@ else
     private UserReq UserA { get; set; } = new UserReq { Id = 1, Name = "User A" };
     private UserReq UserB { get; set; } = new UserReq { Id = 2, Name = "User B" };
 
-    
+
 
     private void HandleToggle(bool newValue)
     {
@@ -90,17 +90,17 @@ else
     }
 
     private async Task IsAuthorized()
-        {
-            var token = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "token");
-            isAuthorized = !string.IsNullOrEmpty(token);
-        }
+    {
+        var token = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "token");
+        isAuthorized = !string.IsNullOrEmpty(token);
+    }
 
 
 
     protected override async Task OnInitializedAsync()
     {
         this.IsAuthorized();
-        
+
         percentageA = 50;
 
         users = await UserService.GetUsersAsync();
@@ -177,6 +177,13 @@ else
                 report4 = BDebts != 0 ? $"{userWhoSpendMost} accumulated a total of debts with {userWhoSpendLess} amounting to {BDebts.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}" : $"{userWhoSpendMost} does not have any debts with {userWhoSpendLess}.";
                 report5 = ADebts != 0 ? $"{userWhoSpendLess} accumulated a total of debts with {userWhoSpendMost} amounting to {ADebts.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}" : $"{userWhoSpendLess} does not have any debts with {userWhoSpendMost}.";
             }
+            else if (APayments == expenseForA && BPayments == expenseForB)
+            {
+                report2 = "";
+                report3 = "All users spent accordingly to their shares";
+                report4= ADebts != 0 ? $"{UserA.Name} accumulated a total of debts with {UserB.Name} amounting to {ADebts.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}" : $"{UserA.Name} does not have any debts with {UserB.Name}.";
+                report5= BDebts != 0 ? $"{UserB.Name} accumulated a total of debts with {UserA.Name} amounting to {BDebts.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))}" : $"{UserB.Name} does not have any debts with {UserA.Name}.";
+            }
 
 
 
@@ -217,6 +224,23 @@ else
                 else
                 {
                     finalReport = "Both users spent within their share and neither owes anything to the other.";
+                }
+            }
+            else if(debtFromAtoB == 0 && debtFromBtoA == 0)
+            {
+                if(ADebts == BDebts)
+                {
+                    finalReport = "Both users spent within their share and neither owes anything to the other.";
+                }
+                else if(ADebts > BDebts)
+                {
+                    decimal final = ADebts - BDebts;
+                    finalReport = $"{userAName} owes {final.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))} to {userBName}";
+                }
+                else
+                {
+                    decimal final = BDebts - ADebts;
+                    finalReport = $"{userBName} owes {final.ToString("C0", CultureInfo.GetCultureInfo("es-CO"))} to {userAName}";
                 }
             }
             else
