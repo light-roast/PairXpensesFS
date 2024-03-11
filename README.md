@@ -1,9 +1,3 @@
----
-runme:
-  id: 01HRQ6NGAPHXCN53070ZFDAEVM
-  version: v3
----
-
 # PairXpenses Blazor - Frontend project for the Codigo facilito Bootcamp on web development with .NET.
 
 ## Table of Contents
