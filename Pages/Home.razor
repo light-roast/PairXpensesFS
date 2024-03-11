@@ -25,12 +25,14 @@
         <div class="@(IsOrderReversed ? "order-2" : "order-1")">
             <ColumnaUsuario User="@UserA"
                 CambiarUser="@CambiarUser"
-                RefreshContent="@refreshChildContent" />
+                RefreshContent="@refreshChildContent" 
+                @ref="columnaUsuarioRef" />
         </div>
         <div class="@(IsOrderReversed ? "order-1" : "order-2")">
             <ColumnaUsuario User="@UserB"                        
                 CambiarUser="@CambiarUser"
-                RefreshContent="@refreshChildContent" />
+                RefreshContent="@refreshChildContent" 
+                @ref="columnaUsuarioRef" />
         </div>
     </main>
     <section>
@@ -64,6 +66,7 @@ else
 
 
 @code {
+    private ColumnaUsuario columnaUsuarioRef;
     private List<UserReq>? users;
     private bool isAuthorized;
     private bool IsOrderReversed { get; set; } = false;
@@ -109,25 +112,29 @@ else
         UserB = users[1];
 
     }
-    private void CambiarUser(UserReq user)
+    private async Task CambiarUser(UserReq user)
     {
-        if (user.Id == 1)
+        if (user.Id % 2 != 0)
         {
             UserA.Name = user.Name;
             Console.WriteLine($"UserA updated to: {UserA.Name}");
+            await InvokeAsync(StateHasChanged);
+            columnaUsuarioRef.Refresh();
 
         }
-        else if (user.Id == 2)
+        else if (user.Id % 2 == 0)
         {
             UserB.Name = user.Name;
             Console.WriteLine($"UserB updated to: {UserB.Name}");
+            await InvokeAsync(StateHasChanged);
+            columnaUsuarioRef.Refresh();
 
         }
         else
         {
             Console.WriteLine("User ID does not match UserA or UserB.");
         }
-        StateHasChanged();
+        
     }
 
     private async Task GenerateReport()

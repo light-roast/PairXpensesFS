@@ -124,7 +124,10 @@
     private List<DebtReq>? debts;
 
 
-
+    public void Refresh()
+    {
+        StateHasChanged();
+    }
 
     protected override void OnParametersSet()
     {
@@ -198,7 +201,7 @@
                 isEdit = false;
 
                 // Request a UI update
-                StateHasChanged();
+                await InvokeAsync(StateHasChanged);
             }
             else
             {
