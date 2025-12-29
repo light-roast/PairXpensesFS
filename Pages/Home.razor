@@ -9,7 +9,7 @@
 @using System.Globalization
 
 <PageTitle>PairXpenses</PageTitle>
-@if (isAuthorized)
+@if (isAuthorized && !isLoading)
 {
     <nav>
     <h1>PairXpenses</h1>
@@ -54,7 +54,10 @@
         
     </section>
 }
-else
+else if(isLoading){
+   <Loading>
+   </Loading>
+}
 {
     
     <NoAuthorized>
@@ -69,6 +72,7 @@ else
     private ColumnaUsuario columnaUsuarioRef;
     private List<UserReq>? users;
     private bool isAuthorized;
+    private bool isLoading = true;
     private bool IsOrderReversed { get; set; } = false;
     private long APayments { get; set; }
     private long ADebts { get; set; }
@@ -110,7 +114,7 @@ else
 
         UserA = users[0];
         UserB = users[1];
-
+        isLoading = false;
     }
     private async Task CambiarUser(UserReq user)
     {
